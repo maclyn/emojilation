@@ -1,0 +1,5828 @@
+{
+	"language" : "English",
+	"author" : "Maclyn",
+	"locale" : "United States",
+	"delimiter" : " ",
+	"connectors": [
+		"-", "_", "'"
+	],
+	"emoji" : [{
+			"phrases" : ["grinning face"],
+			"codepoints" : [{
+					"code" : "1F600",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["grinning face with smiling eyes"],
+			"codepoints" : [{
+					"code" : "1F601",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["face with tears of joy"],
+			"codepoints" : [{
+					"code" : "1F602",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["rolling on the floor laughing"],
+			"codepoints" : [{
+					"code" : "1F923",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["smiling face with open mouth"],
+			"codepoints" : [{
+					"code" : "1F603",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["smiling face with open mouth and smiling eyes"],
+			"codepoints" : [{
+					"code" : "1F604",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["smiling face with open mouth and cold sweat"],
+			"codepoints" : [{
+					"code" : "1F605",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["smiling face with open mouth and tightly - closed eyes"],
+			"codepoints" : [{
+					"code" : "1F606",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["winking face"],
+			"codepoints" : [{
+					"code" : "1F609",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["smiling face with smiling eyes"],
+			"codepoints" : [{
+					"code" : "1F60A",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["face savouring delicious food"],
+			"codepoints" : [{
+					"code" : "1F60B",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["smiling face with sunglasses"],
+			"codepoints" : [{
+					"code" : "1F60E",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["smiling face with heart - shaped eyes"],
+			"codepoints" : [{
+					"code" : "1F60D",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["face throwing a kiss"],
+			"codepoints" : [{
+					"code" : "1F618",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["kissing face"],
+			"codepoints" : [{
+					"code" : "1F617",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["kissing face with smiling eyes"],
+			"codepoints" : [{
+					"code" : "1F619",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["kissing face with closed eyes"],
+			"codepoints" : [{
+					"code" : "1F61A",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["slightly smiling face"],
+			"codepoints" : [{
+					"code" : "1F642",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["hugging face"],
+			"codepoints" : [{
+					"code" : "1F917",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["thinking face"],
+			"codepoints" : [{
+					"code" : "1F914",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["neutral face"],
+			"codepoints" : [{
+					"code" : "1F610",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["expressionless face"],
+			"codepoints" : [{
+					"code" : "1F611",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["face without mouth"],
+			"codepoints" : [{
+					"code" : "1F636",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["face with rolling eyes"],
+			"codepoints" : [{
+					"code" : "1F644",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["smirking face"],
+			"codepoints" : [{
+					"code" : "1F60F",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["persevering face"],
+			"codepoints" : [{
+					"code" : "1F623",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["disappointed but relieved face"],
+			"codepoints" : [{
+					"code" : "1F625",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["face with open mouth"],
+			"codepoints" : [{
+					"code" : "1F62E",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["zipper - mouth face"],
+			"codepoints" : [{
+					"code" : "1F910",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["hushed face"],
+			"codepoints" : [{
+					"code" : "1F62F",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["sleepy face"],
+			"codepoints" : [{
+					"code" : "1F62A",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["tired face"],
+			"codepoints" : [{
+					"code" : "1F62B",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["sleeping face"],
+			"codepoints" : [{
+					"code" : "1F634",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["relieved face"],
+			"codepoints" : [{
+					"code" : "1F60C",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["nerd face"],
+			"codepoints" : [{
+					"code" : "1F913",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["face with stuck - out tongue"],
+			"codepoints" : [{
+					"code" : "1F61B",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["face with stuck - out tongue and winking eye"],
+			"codepoints" : [{
+					"code" : "1F61C",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["face with stuck - out tongue and tightly - closed eyes"],
+			"codepoints" : [{
+					"code" : "1F61D",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["drooling face"],
+			"codepoints" : [{
+					"code" : "1F924",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["unamused face"],
+			"codepoints" : [{
+					"code" : "1F612",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["face with cold sweat"],
+			"codepoints" : [{
+					"code" : "1F613",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["pensive face"],
+			"codepoints" : [{
+					"code" : "1F614",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["confused face"],
+			"codepoints" : [{
+					"code" : "1F615",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["upside - down face"],
+			"codepoints" : [{
+					"code" : "1F643",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["money - mouth face"],
+			"codepoints" : [{
+					"code" : "1F911",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["astonished face"],
+			"codepoints" : [{
+					"code" : "1F632",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["slightly frowning face"],
+			"codepoints" : [{
+					"code" : "1F641",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["confounded face"],
+			"codepoints" : [{
+					"code" : "1F616",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["disappointed face"],
+			"codepoints" : [{
+					"code" : "1F61E",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["worried face"],
+			"codepoints" : [{
+					"code" : "1F61F",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["crying face"],
+			"codepoints" : [{
+					"code" : "1F622",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["loudly crying face"],
+			"codepoints" : [{
+					"code" : "1F62D",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["frowning face with open mouth"],
+			"codepoints" : [{
+					"code" : "1F626",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["anguished face"],
+			"codepoints" : [{
+					"code" : "1F627",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["fearful face"],
+			"codepoints" : [{
+					"code" : "1F628",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["weary face"],
+			"codepoints" : [{
+					"code" : "1F629",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["grimacing face"],
+			"codepoints" : [{
+					"code" : "1F62C",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["face with open mouth and cold sweat"],
+			"codepoints" : [{
+					"code" : "1F630",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["face screaming in fear"],
+			"codepoints" : [{
+					"code" : "1F631",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["flushed face"],
+			"codepoints" : [{
+					"code" : "1F633",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["dizzy face"],
+			"codepoints" : [{
+					"code" : "1F635",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["pouting face"],
+			"codepoints" : [{
+					"code" : "1F621",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["angry face"],
+			"codepoints" : [{
+					"code" : "1F620",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["smiling face with halo"],
+			"codepoints" : [{
+					"code" : "1F607",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["face with cowboy hat"],
+			"codepoints" : [{
+					"code" : "1F920",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["clown face"],
+			"codepoints" : [{
+					"code" : "1F921",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["lying face"],
+			"codepoints" : [{
+					"code" : "1F925",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["face with medical mask"],
+			"codepoints" : [{
+					"code" : "1F637",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["face with thermometer"],
+			"codepoints" : [{
+					"code" : "1F912",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["face with head - bandage"],
+			"codepoints" : [{
+					"code" : "1F915",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["nauseated face"],
+			"codepoints" : [{
+					"code" : "1F922",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["sneezing face"],
+			"codepoints" : [{
+					"code" : "1F927",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["smiling face with horns"],
+			"codepoints" : [{
+					"code" : "1F608",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["imp"],
+			"codepoints" : [{
+					"code" : "1F47F",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["skull"],
+			"codepoints" : [{
+					"code" : "1F480",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["skull and crossbones"],
+			"codepoints" : [{
+					"code" : "2620",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["ghost"],
+			"codepoints" : [{
+					"code" : "1F47B",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["alien monster"],
+			"codepoints" : [{
+					"code" : "1F47E",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["robot face"],
+			"codepoints" : [{
+					"code" : "1F916",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["pile of poo"],
+			"codepoints" : [{
+					"code" : "1F4A9",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["smiling cat face with open mouth"],
+			"codepoints" : [{
+					"code" : "1F63A",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["grinning cat face with smiling eyes"],
+			"codepoints" : [{
+					"code" : "1F638",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["cat face with tears of joy"],
+			"codepoints" : [{
+					"code" : "1F639",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["smiling cat face with heart - shaped eyes"],
+			"codepoints" : [{
+					"code" : "1F63B",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["cat face with wry smile"],
+			"codepoints" : [{
+					"code" : "1F63C",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["kissing cat face with closed eyes"],
+			"codepoints" : [{
+					"code" : "1F63D",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["weary cat face"],
+			"codepoints" : [{
+					"code" : "1F640",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["crying cat face"],
+			"codepoints" : [{
+					"code" : "1F63F",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["pouting cat face"],
+			"codepoints" : [{
+					"code" : "1F63E",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["boy"],
+			"codepoints" : [{
+					"code" : "1F466",
+					"has_modifier" : true
+				}
+			]
+		}, {
+			"phrases" : ["girl"],
+			"codepoints" : [{
+					"code" : "1F467",
+					"has_modifier" : true
+				}
+			]
+		}, {
+			"phrases" : ["man"],
+			"codepoints" : [{
+					"code" : "1F468",
+					"has_modifier" : true
+				}
+			]
+		}, {
+			"phrases" : ["woman"],
+			"codepoints" : [{
+					"code" : "1F469",
+					"has_modifier" : true
+				}
+			]
+		}, {
+			"phrases" : ["baby"],
+			"codepoints" : [{
+					"code" : "1F476",
+					"has_modifier" : true
+				}
+			]
+		}, {
+			"phrases" : ["baby angel"],
+			"codepoints" : [{
+					"code" : "1F47C",
+					"has_modifier" : true
+				}
+			]
+		}, {
+			"phrases" : ["person with blond hair"],
+			"codepoints" : [{
+					"code" : "1F471",
+					"has_modifier" : true
+				}
+			]
+		}, {
+			"phrases" : ["police officer"],
+			"codepoints" : [{
+					"code" : "1F46E",
+					"has_modifier" : true
+				}
+			]
+		}, {
+			"phrases" : ["man with turban"],
+			"codepoints" : [{
+					"code" : "1F473",
+					"has_modifier" : true
+				}
+			]
+		}, {
+			"phrases" : ["construction worker"],
+			"codepoints" : [{
+					"code" : "1F477",
+					"has_modifier" : true
+				}
+			]
+		}, {
+			"phrases" : ["princess"],
+			"codepoints" : [{
+					"code" : "1F478",
+					"has_modifier" : true
+				}
+			]
+		}, {
+			"phrases" : ["prince"],
+			"codepoints" : [{
+					"code" : "1F934",
+					"has_modifier" : true
+				}
+			]
+		}, {
+			"phrases" : ["guardsman"],
+			"codepoints" : [{
+					"code" : "1F482",
+					"has_modifier" : true
+				}
+			]
+		}, {
+			"phrases" : ["mother christmas"],
+			"codepoints" : [{
+					"code" : "1F936",
+					"has_modifier" : true
+				}
+			]
+		}, {
+			"phrases" : ["bride with veil"],
+			"codepoints" : [{
+					"code" : "1F470",
+					"has_modifier" : true
+				}
+			]
+		}, {
+			"phrases" : ["man in tuxedo"],
+			"codepoints" : [{
+					"code" : "1F935",
+					"has_modifier" : true
+				}
+			]
+		}, {
+			"phrases" : ["face massage"],
+			"codepoints" : [{
+					"code" : "1F486",
+					"has_modifier" : true
+				}
+			]
+		}, {
+			"phrases" : ["haircut"],
+			"codepoints" : [{
+					"code" : "1F487",
+					"has_modifier" : true
+				}
+			]
+		}, {
+			"phrases" : ["person frowning"],
+			"codepoints" : [{
+					"code" : "1F64D",
+					"has_modifier" : true
+				}
+			]
+		}, {
+			"phrases" : ["information desk person"],
+			"codepoints" : [{
+					"code" : "1F481",
+					"has_modifier" : true
+				}
+			]
+		}, {
+			"phrases" : ["shrug"],
+			"codepoints" : [{
+					"code" : "1F937",
+					"has_modifier" : true
+				}
+			]
+		}, {
+			"phrases" : ["face palm"],
+			"codepoints" : [{
+					"code" : "1F926",
+					"has_modifier" : true
+				}
+			]
+		}, {
+			"phrases" : ["pedestrian"],
+			"codepoints" : [{
+					"code" : "1F6B6",
+					"has_modifier" : true
+				}
+			]
+		}, {
+			"phrases" : ["runner"],
+			"codepoints" : [{
+					"code" : "1F3C3",
+					"has_modifier" : true
+				}
+			]
+		}, {
+			"phrases" : ["dancer"],
+			"codepoints" : [{
+					"code" : "1F483",
+					"has_modifier" : true
+				}
+			]
+		}, {
+			"phrases" : ["man dancing"],
+			"codepoints" : [{
+					"code" : "1F57A",
+					"has_modifier" : true
+				}
+			]
+		}, {
+			"phrases" : ["pregnant woman"],
+			"codepoints" : [{
+					"code" : "1F930",
+					"has_modifier" : true
+				}
+			]
+		}, {
+			"phrases" : ["man in business suit levitating"],
+			"codepoints" : [{
+					"code" : "1F574",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["bust in silhouette"],
+			"codepoints" : [{
+					"code" : "1F464",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["busts in silhouette"],
+			"codepoints" : [{
+					"code" : "1F465",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["man and woman holding hands"],
+			"codepoints" : [{
+					"code" : "1F46B",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["two men holding hands"],
+			"codepoints" : [{
+					"code" : "1F46C",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["two women holding hands"],
+			"codepoints" : [{
+					"code" : "1F46D",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["kiss"],
+			"codepoints" : [{
+					"code" : "1F48F",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["kiss : woman, man"],
+			"codepoints" : [{
+					"code" : "1F469 200D 2764 FE0F 200D 1F48B 200D 1F468",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["kiss : man, man"],
+			"codepoints" : [{
+					"code" : "1F468 200D 2764 FE0F 200D 1F48B 200D 1F468",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["kiss : woman, woman"],
+			"codepoints" : [{
+					"code" : "1F469 200D 2764 FE0F 200D 1F48B 200D 1F469",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["couple with heart"],
+			"codepoints" : [{
+					"code" : "1F491",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["couple with heart : woman, man"],
+			"codepoints" : [{
+					"code" : "1F469 200D 2764 FE0F 200D 1F468",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["couple with heart : man, man"],
+			"codepoints" : [{
+					"code" : "1F468 200D 2764 FE0F 200D 1F468",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["couple with heart : woman, woman"],
+			"codepoints" : [{
+					"code" : "1F469 200D 2764 FE0F 200D 1F469",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["family"],
+			"codepoints" : [{
+					"code" : "1F46A",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["family : man, woman, boy"],
+			"codepoints" : [{
+					"code" : "1F468 200D 1F469 200D 1F466",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["family : man, woman, girl"],
+			"codepoints" : [{
+					"code" : "1F468 200D 1F469 200D 1F467",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["family : man, woman, girl, boy"],
+			"codepoints" : [{
+					"code" : "1F468 200D 1F469 200D 1F467 200D 1F466",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["family : man, woman, boy, boy"],
+			"codepoints" : [{
+					"code" : "1F468 200D 1F469 200D 1F466 200D 1F466",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["family : man, woman, girl, girl"],
+			"codepoints" : [{
+					"code" : "1F468 200D 1F469 200D 1F467 200D 1F467",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["family : man, man, boy"],
+			"codepoints" : [{
+					"code" : "1F468 200D 1F468 200D 1F466",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["family : man, man, girl"],
+			"codepoints" : [{
+					"code" : "1F468 200D 1F468 200D 1F467",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["family : man, man, girl, boy"],
+			"codepoints" : [{
+					"code" : "1F468 200D 1F468 200D 1F467 200D 1F466",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["family : man, man, boy, boy"],
+			"codepoints" : [{
+					"code" : "1F468 200D 1F468 200D 1F466 200D 1F466",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["family : man, man, girl, girl"],
+			"codepoints" : [{
+					"code" : "1F468 200D 1F468 200D 1F467 200D 1F467",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["family : woman, woman, boy"],
+			"codepoints" : [{
+					"code" : "1F469 200D 1F469 200D 1F466",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["family : woman, woman, girl"],
+			"codepoints" : [{
+					"code" : "1F469 200D 1F469 200D 1F467",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["family : woman, woman, girl, boy"],
+			"codepoints" : [{
+					"code" : "1F469 200D 1F469 200D 1F467 200D 1F466",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["family : woman, woman, boy, boy"],
+			"codepoints" : [{
+					"code" : "1F469 200D 1F469 200D 1F466 200D 1F466",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["family : woman, woman, girl, girl"],
+			"codepoints" : [{
+					"code" : "1F469 200D 1F469 200D 1F467 200D 1F467",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["flexed biceps"],
+			"codepoints" : [{
+					"code" : "1F4AA",
+					"has_modifier" : true
+				}
+			]
+		}, {
+			"phrases" : ["selfie"],
+			"codepoints" : [{
+					"code" : "1F933",
+					"has_modifier" : true
+				}
+			]
+		}, {
+			"phrases" : ["victory hand"],
+			"codepoints" : [{
+					"code" : "270C",
+					"has_modifier" : true
+				}
+			]
+		}, {
+			"phrases" : ["hand with index and middle fingers crossed"],
+			"codepoints" : [{
+					"code" : "1F91E",
+					"has_modifier" : true
+				}
+			]
+		}, {
+			"phrases" : ["sign of the horns"],
+			"codepoints" : [{
+					"code" : "1F918",
+					"has_modifier" : true
+				}
+			]
+		}, {
+			"phrases" : ["call me hand"],
+			"codepoints" : [{
+					"code" : "1F919",
+					"has_modifier" : true
+				}
+			]
+		}, {
+			"phrases" : ["raised hand with fingers splayed"],
+			"codepoints" : [{
+					"code" : "1F590",
+					"has_modifier" : true
+				}
+			]
+		}, {
+			"phrases" : ["raised hand"],
+			"codepoints" : [{
+					"code" : "270B",
+					"has_modifier" : true
+				}
+			]
+		}, {
+			"phrases" : ["raised fist"],
+			"codepoints" : [{
+					"code" : "270A",
+					"has_modifier" : true
+				}
+			]
+		}, {
+			"phrases" : ["left - facing fist"],
+			"codepoints" : [{
+					"code" : "1F91B",
+					"has_modifier" : true
+				}
+			]
+		}, {
+			"phrases" : ["right - facing fist"],
+			"codepoints" : [{
+					"code" : "1F91C",
+					"has_modifier" : true
+				}
+			]
+		}, {
+			"phrases" : ["raised back of hand"],
+			"codepoints" : [{
+					"code" : "1F91A",
+					"has_modifier" : true
+				}
+			]
+		}, {
+			"phrases" : ["writing hand"],
+			"codepoints" : [{
+					"code" : "270D",
+					"has_modifier" : true
+				}
+			]
+		}, {
+			"phrases" : ["handshake"],
+			"codepoints" : [{
+					"code" : "1F91D",
+					"has_modifier" : true
+				}
+			]
+		}, {
+			"phrases" : ["nail polish"],
+			"codepoints" : [{
+					"code" : "1F485",
+					"has_modifier" : true
+				}
+			]
+		}, {
+			"phrases" : ["ear"],
+			"codepoints" : [{
+					"code" : "1F442",
+					"has_modifier" : true
+				}
+			]
+		}, {
+			"phrases" : ["nose"],
+			"codepoints" : [{
+					"code" : "1F443",
+					"has_modifier" : true
+				}
+			]
+		}, {
+			"phrases" : ["footprints"],
+			"codepoints" : [{
+					"code" : "1F463",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["eyes"],
+			"codepoints" : [{
+					"code" : "1F440",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["eye"],
+			"codepoints" : [{
+					"code" : "1F441",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["tongue"],
+			"codepoints" : [{
+					"code" : "1F445",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["mouth"],
+			"codepoints" : [{
+					"code" : "1F444",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["kiss mark"],
+			"codepoints" : [{
+					"code" : "1F48B",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["heart with arrow"],
+			"codepoints" : [{
+					"code" : "1F498",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["beating heart"],
+			"codepoints" : [{
+					"code" : "1F493",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["broken heart"],
+			"codepoints" : [{
+					"code" : "1F494",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["two hearts"],
+			"codepoints" : [{
+					"code" : "1F495",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["sparkling heart"],
+			"codepoints" : [{
+					"code" : "1F496",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["growing heart"],
+			"codepoints" : [{
+					"code" : "1F497",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["blue heart"],
+			"codepoints" : [{
+					"code" : "1F499",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["green heart"],
+			"codepoints" : [{
+					"code" : "1F49A",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["yellow heart"],
+			"codepoints" : [{
+					"code" : "1F49B",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["purple heart"],
+			"codepoints" : [{
+					"code" : "1F49C",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["black heart"],
+			"codepoints" : [{
+					"code" : "1F5A4",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["heart with ribbon"],
+			"codepoints" : [{
+					"code" : "1F49D",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["revolving hearts"],
+			"codepoints" : [{
+					"code" : "1F49E",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["heart decoration"],
+			"codepoints" : [{
+					"code" : "1F49F",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["heavy heart exclamation mark ornament"],
+			"codepoints" : [{
+					"code" : "2763",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["love letter"],
+			"codepoints" : [{
+					"code" : "1F48C",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["anger symbol"],
+			"codepoints" : [{
+					"code" : "1F4A2",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["bomb"],
+			"codepoints" : [{
+					"code" : "1F4A3",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["speech balloon"],
+			"codepoints" : [{
+					"code" : "1F4AC",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["left speech bubble"],
+			"codepoints" : [{
+					"code" : "1F5E8",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["right anger bubble"],
+			"codepoints" : [{
+					"code" : "1F5EF",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["thought balloon"],
+			"codepoints" : [{
+					"code" : "1F4AD",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["hole"],
+			"codepoints" : [{
+					"code" : "1F573",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["necktie"],
+			"codepoints" : [{
+					"code" : "1F454",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["t - shirt"],
+			"codepoints" : [{
+					"code" : "1F455",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["jeans"],
+			"codepoints" : [{
+					"code" : "1F456",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["dress"],
+			"codepoints" : [{
+					"code" : "1F457",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["kimono"],
+			"codepoints" : [{
+					"code" : "1F458",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["bikini"],
+			"codepoints" : [{
+					"code" : "1F459",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["purse"],
+			"codepoints" : [{
+					"code" : "1F45B",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["handbag"],
+			"codepoints" : [{
+					"code" : "1F45C",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["pouch"],
+			"codepoints" : [{
+					"code" : "1F45D",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["shopping bags"],
+			"codepoints" : [{
+					"code" : "1F6CD",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["high - heeled shoe"],
+			"codepoints" : [{
+					"code" : "1F460",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["crown"],
+			"codepoints" : [{
+					"code" : "1F451",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["top hat"],
+			"codepoints" : [{
+					"code" : "1F3A9",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["graduation cap"],
+			"codepoints" : [{
+					"code" : "1F393",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["helmet with white cross"],
+			"codepoints" : [{
+					"code" : "26D1",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["prayer beads"],
+			"codepoints" : [{
+					"code" : "1F4FF",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["lipstick"],
+			"codepoints" : [{
+					"code" : "1F484",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["ring"],
+			"codepoints" : [{
+					"code" : "1F48D",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["gem stone"],
+			"codepoints" : [{
+					"code" : "1F48E",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["monkey face"],
+			"codepoints" : [{
+					"code" : "1F435",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["monkey"],
+			"codepoints" : [{
+					"code" : "1F412",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["gorilla"],
+			"codepoints" : [{
+					"code" : "1F98D",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["dog face"],
+			"codepoints" : [{
+					"code" : "1F436",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["dog"],
+			"codepoints" : [{
+					"code" : "1F415",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["poodle"],
+			"codepoints" : [{
+					"code" : "1F429",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["wolf face", "wolf"],
+			"codepoints" : [{
+					"code" : "1F43A",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["fox face", "fox"],
+			"codepoints" : [{
+					"code" : "1F98A",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["cat face", "cat"],
+			"codepoints" : [{
+					"code" : "1F431",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["cat"],
+			"codepoints" : [{
+					"code" : "1F408",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["lion face"],
+			"codepoints" : [{
+					"code" : "1F981",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["tiger face"],
+			"codepoints" : [{
+					"code" : "1F42F",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["tiger"],
+			"codepoints" : [{
+					"code" : "1F405",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["leopard"],
+			"codepoints" : [{
+					"code" : "1F406",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["horse face"],
+			"codepoints" : [{
+					"code" : "1F434",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["horse"],
+			"codepoints" : [{
+					"code" : "1F40E",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["deer"],
+			"codepoints" : [{
+					"code" : "1F98C",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["unicorn face"],
+			"codepoints" : [{
+					"code" : "1F984",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["cow face"],
+			"codepoints" : [{
+					"code" : "1F42E",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["ox"],
+			"codepoints" : [{
+					"code" : "1F402",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["water buffalo"],
+			"codepoints" : [{
+					"code" : "1F403",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["cow"],
+			"codepoints" : [{
+					"code" : "1F404",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["pig face"],
+			"codepoints" : [{
+					"code" : "1F437",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["pig"],
+			"codepoints" : [{
+					"code" : "1F416",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["boar"],
+			"codepoints" : [{
+					"code" : "1F417",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["pig nose"],
+			"codepoints" : [{
+					"code" : "1F43D",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["ram"],
+			"codepoints" : [{
+					"code" : "1F40F",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["sheep"],
+			"codepoints" : [{
+					"code" : "1F411",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["goat"],
+			"codepoints" : [{
+					"code" : "1F410",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["elephant"],
+			"codepoints" : [{
+					"code" : "1F418",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["rhinoceros"],
+			"codepoints" : [{
+					"code" : "1F98F",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["mouse face"],
+			"codepoints" : [{
+					"code" : "1F42D",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["mouse"],
+			"codepoints" : [{
+					"code" : "1F401",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["rat"],
+			"codepoints" : [{
+					"code" : "1F400",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["hamster face"],
+			"codepoints" : [{
+					"code" : "1F439",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["rabbit face"],
+			"codepoints" : [{
+					"code" : "1F430",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["rabbit"],
+			"codepoints" : [{
+					"code" : "1F407",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["chipmunk"],
+			"codepoints" : [{
+					"code" : "1F43F",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["bat"],
+			"codepoints" : [{
+					"code" : "1F987",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["bear face"],
+			"codepoints" : [{
+					"code" : "1F43B",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["koala"],
+			"codepoints" : [{
+					"code" : "1F428",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["panda face"],
+			"codepoints" : [{
+					"code" : "1F43C",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["paw prints"],
+			"codepoints" : [{
+					"code" : "1F43E",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["turkey"],
+			"codepoints" : [{
+					"code" : "1F983",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["chicken"],
+			"codepoints" : [{
+					"code" : "1F414",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["rooster"],
+			"codepoints" : [{
+					"code" : "1F413",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["hatching chick"],
+			"codepoints" : [{
+					"code" : "1F423",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["baby chick"],
+			"codepoints" : [{
+					"code" : "1F424",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["front - facing baby chick"],
+			"codepoints" : [{
+					"code" : "1F425",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["bird"],
+			"codepoints" : [{
+					"code" : "1F426",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["penguin"],
+			"codepoints" : [{
+					"code" : "1F427",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["eagle"],
+			"codepoints" : [{
+					"code" : "1F985",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["duck"],
+			"codepoints" : [{
+					"code" : "1F986",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["owl"],
+			"codepoints" : [{
+					"code" : "1F989",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["frog face"],
+			"codepoints" : [{
+					"code" : "1F438",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["crocodile"],
+			"codepoints" : [{
+					"code" : "1F40A",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["turtle"],
+			"codepoints" : [{
+					"code" : "1F422",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["lizard"],
+			"codepoints" : [{
+					"code" : "1F98E",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["snake"],
+			"codepoints" : [{
+					"code" : "1F40D",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["dragon face"],
+			"codepoints" : [{
+					"code" : "1F432",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["dragon"],
+			"codepoints" : [{
+					"code" : "1F409",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["spouting whale"],
+			"codepoints" : [{
+					"code" : "1F433",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["whale"],
+			"codepoints" : [{
+					"code" : "1F40B",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["dolphin"],
+			"codepoints" : [{
+					"code" : "1F42C",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["fish"],
+			"codepoints" : [{
+					"code" : "1F41F",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["tropical fish"],
+			"codepoints" : [{
+					"code" : "1F420",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["blowfish"],
+			"codepoints" : [{
+					"code" : "1F421",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["shark"],
+			"codepoints" : [{
+					"code" : "1F988",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["octopus"],
+			"codepoints" : [{
+					"code" : "1F419",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["spiral shell"],
+			"codepoints" : [{
+					"code" : "1F41A",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["crab"],
+			"codepoints" : [{
+					"code" : "1F980",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["shrimp"],
+			"codepoints" : [{
+					"code" : "1F990",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["squid"],
+			"codepoints" : [{
+					"code" : "1F991",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["butterfly"],
+			"codepoints" : [{
+					"code" : "1F98B",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["snail"],
+			"codepoints" : [{
+					"code" : "1F40C",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["bug"],
+			"codepoints" : [{
+					"code" : "1F41B",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["ant"],
+			"codepoints" : [{
+					"code" : "1F41C",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["honeybee"],
+			"codepoints" : [{
+					"code" : "1F41D",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["lady beetle"],
+			"codepoints" : [{
+					"code" : "1F41E",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["spider"],
+			"codepoints" : [{
+					"code" : "1F577",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["spider web"],
+			"codepoints" : [{
+					"code" : "1F578",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["scorpion"],
+			"codepoints" : [{
+					"code" : "1F982",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["bouquet"],
+			"codepoints" : [{
+					"code" : "1F490",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["cherry blossom"],
+			"codepoints" : [{
+					"code" : "1F338",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["white flower"],
+			"codepoints" : [{
+					"code" : "1F4AE",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["rosette"],
+			"codepoints" : [{
+					"code" : "1F3F5",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["rose"],
+			"codepoints" : [{
+					"code" : "1F339",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["wilted flower"],
+			"codepoints" : [{
+					"code" : "1F940",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["hibiscus"],
+			"codepoints" : [{
+					"code" : "1F33A",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["sunflower"],
+			"codepoints" : [{
+					"code" : "1F33B",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["blossom"],
+			"codepoints" : [{
+					"code" : "1F33C",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["tulip"],
+			"codepoints" : [{
+					"code" : "1F337",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["seedling"],
+			"codepoints" : [{
+					"code" : "1F331",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["deciduous tree"],
+			"codepoints" : [{
+					"code" : "1F333",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["palm tree"],
+			"codepoints" : [{
+					"code" : "1F334",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["cactus"],
+			"codepoints" : [{
+					"code" : "1F335",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["herb"],
+			"codepoints" : [{
+					"code" : "1F33F",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["shamrock"],
+			"codepoints" : [{
+					"code" : "2618",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["four leaf clover"],
+			"codepoints" : [{
+					"code" : "1F340",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["maple leaf"],
+			"codepoints" : [{
+					"code" : "1F341",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["fallen leaf"],
+			"codepoints" : [{
+					"code" : "1F342",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["leaf fluttering in wind"],
+			"codepoints" : [{
+					"code" : "1F343",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["grapes"],
+			"codepoints" : [{
+					"code" : "1F347",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["melon"],
+			"codepoints" : [{
+					"code" : "1F348",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["watermelon"],
+			"codepoints" : [{
+					"code" : "1F349",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["tangerine"],
+			"codepoints" : [{
+					"code" : "1F34A",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["lemon"],
+			"codepoints" : [{
+					"code" : "1F34B",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["banana"],
+			"codepoints" : [{
+					"code" : "1F34C",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["pineapple"],
+			"codepoints" : [{
+					"code" : "1F34D",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["red apple"],
+			"codepoints" : [{
+					"code" : "1F34E",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["green apple"],
+			"codepoints" : [{
+					"code" : "1F34F",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["pear"],
+			"codepoints" : [{
+					"code" : "1F350",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["peach"],
+			"codepoints" : [{
+					"code" : "1F351",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["cherries"],
+			"codepoints" : [{
+					"code" : "1F352",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["strawberry"],
+			"codepoints" : [{
+					"code" : "1F353",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["tomato"],
+			"codepoints" : [{
+					"code" : "1F345",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["kiwifruit"],
+			"codepoints" : [{
+					"code" : "1F95D",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["avocado"],
+			"codepoints" : [{
+					"code" : "1F951",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["potato"],
+			"codepoints" : [{
+					"code" : "1F954",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["carrot"],
+			"codepoints" : [{
+					"code" : "1F955",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["hot pepper"],
+			"codepoints" : [{
+					"code" : "1F336",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["cucumber"],
+			"codepoints" : [{
+					"code" : "1F952",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["mushroom"],
+			"codepoints" : [{
+					"code" : "1F344",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["peanuts"],
+			"codepoints" : [{
+					"code" : "1F95C",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["chestnut"],
+			"codepoints" : [{
+					"code" : "1F330",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["bread"],
+			"codepoints" : [{
+					"code" : "1F35E",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["croissant"],
+			"codepoints" : [{
+					"code" : "1F950",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["baguette bread"],
+			"codepoints" : [{
+					"code" : "1F956",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["pancakes"],
+			"codepoints" : [{
+					"code" : "1F95E",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["cheese wedge"],
+			"codepoints" : [{
+					"code" : "1F9C0",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["meat on bone"],
+			"codepoints" : [{
+					"code" : "1F356",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["poultry leg"],
+			"codepoints" : [{
+					"code" : "1F357",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["bacon"],
+			"codepoints" : [{
+					"code" : "1F953",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["hamburger"],
+			"codepoints" : [{
+					"code" : "1F354",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["french fries"],
+			"codepoints" : [{
+					"code" : "1F35F",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["hot dog"],
+			"codepoints" : [{
+					"code" : "1F32D",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["taco"],
+			"codepoints" : [{
+					"code" : "1F32E",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["burrito"],
+			"codepoints" : [{
+					"code" : "1F32F",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["stuffed flatbread"],
+			"codepoints" : [{
+					"code" : "1F959",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["egg"],
+			"codepoints" : [{
+					"code" : "1F95A",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["cooking"],
+			"codepoints" : [{
+					"code" : "1F373",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["shallow pan of food"],
+			"codepoints" : [{
+					"code" : "1F958",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["pot of food"],
+			"codepoints" : [{
+					"code" : "1F372",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["green salad"],
+			"codepoints" : [{
+					"code" : "1F957",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["popcorn"],
+			"codepoints" : [{
+					"code" : "1F37F",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["bento box"],
+			"codepoints" : [{
+					"code" : "1F371",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["rice cracker"],
+			"codepoints" : [{
+					"code" : "1F358",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["rice ball"],
+			"codepoints" : [{
+					"code" : "1F359",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["cooked rice"],
+			"codepoints" : [{
+					"code" : "1F35A",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["steaming bowl"],
+			"codepoints" : [{
+					"code" : "1F35C",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["spaghetti"],
+			"codepoints" : [{
+					"code" : "1F35D",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["roasted sweet potato"],
+			"codepoints" : [{
+					"code" : "1F360",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["oden"],
+			"codepoints" : [{
+					"code" : "1F362",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["sushi"],
+			"codepoints" : [{
+					"code" : "1F363",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["fried shrimp"],
+			"codepoints" : [{
+					"code" : "1F364",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["dango"],
+			"codepoints" : [{
+					"code" : "1F361",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["soft ice cream"],
+			"codepoints" : [{
+					"code" : "1F366",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["shaved ice"],
+			"codepoints" : [{
+					"code" : "1F367",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["ice cream"],
+			"codepoints" : [{
+					"code" : "1F368",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["doughnut"],
+			"codepoints" : [{
+					"code" : "1F369",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["cookie"],
+			"codepoints" : [{
+					"code" : "1F36A",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["birthday cake"],
+			"codepoints" : [{
+					"code" : "1F382",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["shortcake"],
+			"codepoints" : [{
+					"code" : "1F370",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["chocolate bar"],
+			"codepoints" : [{
+					"code" : "1F36B",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["candy"],
+			"codepoints" : [{
+					"code" : "1F36C",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["lollipop"],
+			"codepoints" : [{
+					"code" : "1F36D",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["custard"],
+			"codepoints" : [{
+					"code" : "1F36E",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["honey pot"],
+			"codepoints" : [{
+					"code" : "1F36F",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["baby bottle"],
+			"codepoints" : [{
+					"code" : "1F37C",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["glass of milk"],
+			"codepoints" : [{
+					"code" : "1F95B",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["hot beverage"],
+			"codepoints" : [{
+					"code" : "2615",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["teacup without handle"],
+			"codepoints" : [{
+					"code" : "1F375",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["bottle with popping cork"],
+			"codepoints" : [{
+					"code" : "1F37E",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["wine glass"],
+			"codepoints" : [{
+					"code" : "1F377",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["cocktail glass"],
+			"codepoints" : [{
+					"code" : "1F378",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["tropical drink"],
+			"codepoints" : [{
+					"code" : "1F379",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["beer mug"],
+			"codepoints" : [{
+					"code" : "1F37A",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["clinking beer mugs"],
+			"codepoints" : [{
+					"code" : "1F37B",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["clinking glasses"],
+			"codepoints" : [{
+					"code" : "1F942",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["tumbler glass"],
+			"codepoints" : [{
+					"code" : "1F943",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["fork and knife with plate"],
+			"codepoints" : [{
+					"code" : "1F37D",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["fork and knife"],
+			"codepoints" : [{
+					"code" : "1F374",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["spoon"],
+			"codepoints" : [{
+					"code" : "1F944",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["amphora"],
+			"codepoints" : [{
+					"code" : "1F3FA",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["globe with meridians"],
+			"codepoints" : [{
+					"code" : "1F310",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["world map"],
+			"codepoints" : [{
+					"code" : "1F5FA",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["mountain"],
+			"codepoints" : [{
+					"code" : "26F0",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["volcano"],
+			"codepoints" : [{
+					"code" : "1F30B",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["mount fuji"],
+			"codepoints" : [{
+					"code" : "1F5FB",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["camping"],
+			"codepoints" : [{
+					"code" : "1F3D5",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["beach with umbrella"],
+			"codepoints" : [{
+					"code" : "1F3D6",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["desert"],
+			"codepoints" : [{
+					"code" : "1F3DC",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["desert island"],
+			"codepoints" : [{
+					"code" : "1F3DD",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["national park"],
+			"codepoints" : [{
+					"code" : "1F3DE",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["stadium"],
+			"codepoints" : [{
+					"code" : "1F3DF",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["classical building"],
+			"codepoints" : [{
+					"code" : "1F3DB",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["building construction"],
+			"codepoints" : [{
+					"code" : "1F3D7",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["house buildings"],
+			"codepoints" : [{
+					"code" : "1F3D8",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["cityscape"],
+			"codepoints" : [{
+					"code" : "1F3D9",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["derelict house building"],
+			"codepoints" : [{
+					"code" : "1F3DA",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["house building"],
+			"codepoints" : [{
+					"code" : "1F3E0",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["house with garden"],
+			"codepoints" : [{
+					"code" : "1F3E1",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["office building"],
+			"codepoints" : [{
+					"code" : "1F3E2",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["japanese post office"],
+			"codepoints" : [{
+					"code" : "1F3E3",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["hospital"],
+			"codepoints" : [{
+					"code" : "1F3E5",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["bank"],
+			"codepoints" : [{
+					"code" : "1F3E6",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["hotel"],
+			"codepoints" : [{
+					"code" : "1F3E8",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["love hotel"],
+			"codepoints" : [{
+					"code" : "1F3E9",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["convenience store"],
+			"codepoints" : [{
+					"code" : "1F3EA",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["school"],
+			"codepoints" : [{
+					"code" : "1F3EB",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["department store"],
+			"codepoints" : [{
+					"code" : "1F3EC",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["factory"],
+			"codepoints" : [{
+					"code" : "1F3ED",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["japanese castle"],
+			"codepoints" : [{
+					"code" : "1F3EF",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["wedding"],
+			"codepoints" : [{
+					"code" : "1F492",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["tokyo tower"],
+			"codepoints" : [{
+					"code" : "1F5FC",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["statue of liberty"],
+			"codepoints" : [{
+					"code" : "1F5FD",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["church"],
+			"codepoints" : [{
+					"code" : "26EA",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["mosque"],
+			"codepoints" : [{
+					"code" : "1F54C",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["synagogue"],
+			"codepoints" : [{
+					"code" : "1F54D",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["shinto shrine"],
+			"codepoints" : [{
+					"code" : "26E9",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["kaaba"],
+			"codepoints" : [{
+					"code" : "1F54B",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["fountain"],
+			"codepoints" : [{
+					"code" : "26F2",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["tent"],
+			"codepoints" : [{
+					"code" : "26FA",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["foggy"],
+			"codepoints" : [{
+					"code" : "1F301",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["night with stars"],
+			"codepoints" : [{
+					"code" : "1F303",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["sunrise over mountains"],
+			"codepoints" : [{
+					"code" : "1F304",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["sunrise"],
+			"codepoints" : [{
+					"code" : "1F305",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["cityscape at dusk"],
+			"codepoints" : [{
+					"code" : "1F306",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["bridge at night"],
+			"codepoints" : [{
+					"code" : "1F309",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["hot springs"],
+			"codepoints" : [{
+					"code" : "2668",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["milky way"],
+			"codepoints" : [{
+					"code" : "1F30C",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["carousel horse"],
+			"codepoints" : [{
+					"code" : "1F3A0",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["ferris wheel"],
+			"codepoints" : [{
+					"code" : "1F3A1",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["roller coaster"],
+			"codepoints" : [{
+					"code" : "1F3A2",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["barber pole"],
+			"codepoints" : [{
+					"code" : "1F488",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["circus tent"],
+			"codepoints" : [{
+					"code" : "1F3AA",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["performing arts"],
+			"codepoints" : [{
+					"code" : "1F3AD",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["frame with picture"],
+			"codepoints" : [{
+					"code" : "1F5BC",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["artist palette"],
+			"codepoints" : [{
+					"code" : "1F3A8",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["slot machine"],
+			"codepoints" : [{
+					"code" : "1F3B0",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["railway car"],
+			"codepoints" : [{
+					"code" : "1F683",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["high - speed train"],
+			"codepoints" : [{
+					"code" : "1F684",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["high - speed train with bullet nose"],
+			"codepoints" : [{
+					"code" : "1F685",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["train"],
+			"codepoints" : [{
+					"code" : "1F686",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["metro"],
+			"codepoints" : [{
+					"code" : "1F687",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["light rail"],
+			"codepoints" : [{
+					"code" : "1F688",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["station"],
+			"codepoints" : [{
+					"code" : "1F689",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["tram"],
+			"codepoints" : [{
+					"code" : "1F68A",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["monorail"],
+			"codepoints" : [{
+					"code" : "1F69D",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["mountain railway"],
+			"codepoints" : [{
+					"code" : "1F69E",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["tram car"],
+			"codepoints" : [{
+					"code" : "1F68B",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["bus"],
+			"codepoints" : [{
+					"code" : "1F68C",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["oncoming bus"],
+			"codepoints" : [{
+					"code" : "1F68D",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["trolleybus"],
+			"codepoints" : [{
+					"code" : "1F68E",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["bus stop"],
+			"codepoints" : [{
+					"code" : "1F68F",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["minibus"],
+			"codepoints" : [{
+					"code" : "1F690",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["ambulance"],
+			"codepoints" : [{
+					"code" : "1F691",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["fire engine"],
+			"codepoints" : [{
+					"code" : "1F692",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["police car"],
+			"codepoints" : [{
+					"code" : "1F693",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["oncoming police car"],
+			"codepoints" : [{
+					"code" : "1F694",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["taxi"],
+			"codepoints" : [{
+					"code" : "1F695",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["oncoming taxi"],
+			"codepoints" : [{
+					"code" : "1F696",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["automobile"],
+			"codepoints" : [{
+					"code" : "1F697",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["oncoming automobile"],
+			"codepoints" : [{
+					"code" : "1F698",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["recreational vehicle"],
+			"codepoints" : [{
+					"code" : "1F699",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["delivery truck"],
+			"codepoints" : [{
+					"code" : "1F69A",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["articulated lorry"],
+			"codepoints" : [{
+					"code" : "1F69B",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["tractor"],
+			"codepoints" : [{
+					"code" : "1F69C",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["bicycle"],
+			"codepoints" : [{
+					"code" : "1F6B2",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["fuel pump"],
+			"codepoints" : [{
+					"code" : "26FD",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["motorway"],
+			"codepoints" : [{
+					"code" : "1F6E3",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["railway track"],
+			"codepoints" : [{
+					"code" : "1F6E4",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["horizontal traffic light"],
+			"codepoints" : [{
+					"code" : "1F6A5",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["vertical traffic light"],
+			"codepoints" : [{
+					"code" : "1F6A6",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["octagonal sign"],
+			"codepoints" : [{
+					"code" : "1F6D1",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["scooter"],
+			"codepoints" : [{
+					"code" : "1F6F4",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["motor scooter"],
+			"codepoints" : [{
+					"code" : "1F6F5",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["anchor"],
+			"codepoints" : [{
+					"code" : "2693",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["sailboat"],
+			"codepoints" : [{
+					"code" : "26F5",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["rowboat"],
+			"codepoints" : [{
+					"code" : "1F6A3",
+					"has_modifier" : true
+				}
+			]
+		}, {
+			"phrases" : ["canoe"],
+			"codepoints" : [{
+					"code" : "1F6F6",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["speedboat"],
+			"codepoints" : [{
+					"code" : "1F6A4",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["passenger ship"],
+			"codepoints" : [{
+					"code" : "1F6F3",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["ferry"],
+			"codepoints" : [{
+					"code" : "26F4",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["motor boat"],
+			"codepoints" : [{
+					"code" : "1F6E5",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["ship"],
+			"codepoints" : [{
+					"code" : "1F6A2",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["airplane"],
+			"codepoints" : [{
+					"code" : "2708",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["small airplane"],
+			"codepoints" : [{
+					"code" : "1F6E9",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["airplane departure"],
+			"codepoints" : [{
+					"code" : "1F6EB",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["seat"],
+			"codepoints" : [{
+					"code" : "1F4BA",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["helicopter"],
+			"codepoints" : [{
+					"code" : "1F681",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["suspension railway"],
+			"codepoints" : [{
+					"code" : "1F69F",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["mountain cableway"],
+			"codepoints" : [{
+					"code" : "1F6A0",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["aerial tramway"],
+			"codepoints" : [{
+					"code" : "1F6A1",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["rocket"],
+			"codepoints" : [{
+					"code" : "1F680",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["satellite"],
+			"codepoints" : [{
+					"code" : "1F6F0",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["bellhop bell"],
+			"codepoints" : [{
+					"code" : "1F6CE",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["door"],
+			"codepoints" : [{
+					"code" : "1F6AA",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["bed"],
+			"codepoints" : [{
+					"code" : "1F6CF",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["couch and lamp"],
+			"codepoints" : [{
+					"code" : "1F6CB",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["toilet"],
+			"codepoints" : [{
+					"code" : "1F6BD",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["shower"],
+			"codepoints" : [{
+					"code" : "1F6BF",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["bathtub"],
+			"codepoints" : [{
+					"code" : "1F6C1",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["hourglass"],
+			"codepoints" : [{
+					"code" : "231B",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["hourglass with flowing sand"],
+			"codepoints" : [{
+					"code" : "23F3",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["watch"],
+			"codepoints" : [{
+					"code" : "231A",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["alarm clock"],
+			"codepoints" : [{
+					"code" : "23F0",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["stopwatch"],
+			"codepoints" : [{
+					"code" : "23F1",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["timer clock"],
+			"codepoints" : [{
+					"code" : "23F2",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["mantelpiece clock"],
+			"codepoints" : [{
+					"code" : "1F570",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["crescent moon"],
+			"codepoints" : [{
+					"code" : "1F319",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["first quarter moon with face"],
+			"codepoints" : [{
+					"code" : "1F31B",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["last quarter moon with face"],
+			"codepoints" : [{
+					"code" : "1F31C",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["thermometer"],
+			"codepoints" : [{
+					"code" : "1F321",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["full moon with face"],
+			"codepoints" : [{
+					"code" : "1F31D",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["sun with face"],
+			"codepoints" : [{
+					"code" : "1F31E",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["white medium star"],
+			"codepoints" : [{
+					"code" : "2B50",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["glowing star"],
+			"codepoints" : [{
+					"code" : "1F31F",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["shooting star"],
+			"codepoints" : [{
+					"code" : "1F320",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["cloud"],
+			"codepoints" : [{
+					"code" : "2601",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["sun behind cloud"],
+			"codepoints" : [{
+					"code" : "26C5",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["cloud with rain"],
+			"codepoints" : [{
+					"code" : "1F327",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["cloud with snow"],
+			"codepoints" : [{
+					"code" : "1F328",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["cloud with lightning"],
+			"codepoints" : [{
+					"code" : "1F329",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["fog"],
+			"codepoints" : [{
+					"code" : "1F32B",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["cyclone"],
+			"codepoints" : [{
+					"code" : "1F300",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["rainbow"],
+			"codepoints" : [{
+					"code" : "1F308",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["closed umbrella"],
+			"codepoints" : [{
+					"code" : "1F302",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["umbrella"],
+			"codepoints" : [{
+					"code" : "2602",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["umbrella with rain drops"],
+			"codepoints" : [{
+					"code" : "2614",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["umbrella on ground"],
+			"codepoints" : [{
+					"code" : "26F1",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["snowflake"],
+			"codepoints" : [{
+					"code" : "2744",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["snowman"],
+			"codepoints" : [{
+					"code" : "2603",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["snowman without snow"],
+			"codepoints" : [{
+					"code" : "26C4",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["comet"],
+			"codepoints" : [{
+					"code" : "2604",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["fire"],
+			"codepoints" : [{
+					"code" : "1F525",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["droplet"],
+			"codepoints" : [{
+					"code" : "1F4A7",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["water wave"],
+			"codepoints" : [{
+					"code" : "1F30A",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["jack - o - lantern"],
+			"codepoints" : [{
+					"code" : "1F383",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["christmas tree"],
+			"codepoints" : [{
+					"code" : "1F384",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["fireworks"],
+			"codepoints" : [{
+					"code" : "1F386",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["sparkles"],
+			"codepoints" : [{
+					"code" : "2728",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["balloon"],
+			"codepoints" : [{
+					"code" : "1F388",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["party popper"],
+			"codepoints" : [{
+					"code" : "1F389",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["confetti ball"],
+			"codepoints" : [{
+					"code" : "1F38A",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["tanabata tree"],
+			"codepoints" : [{
+					"code" : "1F38B",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["pine decoration"],
+			"codepoints" : [{
+					"code" : "1F38D",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["japanese dolls"],
+			"codepoints" : [{
+					"code" : "1F38E",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["carp streamer"],
+			"codepoints" : [{
+					"code" : "1F38F",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["wind chime"],
+			"codepoints" : [{
+					"code" : "1F390",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["ribbon"],
+			"codepoints" : [{
+					"code" : "1F380",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["wrapped present"],
+			"codepoints" : [{
+					"code" : "1F381",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["reminder ribbon"],
+			"codepoints" : [{
+					"code" : "1F397",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["admission tickets"],
+			"codepoints" : [{
+					"code" : "1F39F",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["ticket"],
+			"codepoints" : [{
+					"code" : "1F3AB",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["military medal"],
+			"codepoints" : [{
+					"code" : "1F396",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["trophy"],
+			"codepoints" : [{
+					"code" : "1F3C6",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["sports medal"],
+			"codepoints" : [{
+					"code" : "1F3C5",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["first place medal"],
+			"codepoints" : [{
+					"code" : "1F947",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["second place medal"],
+			"codepoints" : [{
+					"code" : "1F948",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["third place medal"],
+			"codepoints" : [{
+					"code" : "1F949",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["soccer ball"],
+			"codepoints" : [{
+					"code" : "26BD",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["baseball"],
+			"codepoints" : [{
+					"code" : "26BE",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["volleyball"],
+			"codepoints" : [{
+					"code" : "1F3D0",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["american football"],
+			"codepoints" : [{
+					"code" : "1F3C8",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["rugby football"],
+			"codepoints" : [{
+					"code" : "1F3C9",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["billiards"],
+			"codepoints" : [{
+					"code" : "1F3B1",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["bowling"],
+			"codepoints" : [{
+					"code" : "1F3B3",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["ice hockey stick and puck"],
+			"codepoints" : [{
+					"code" : "1F3D2",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["boxing glove"],
+			"codepoints" : [{
+					"code" : "1F94A",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["martial arts uniform"],
+			"codepoints" : [{
+					"code" : "1F94B",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["flag in hole"],
+			"codepoints" : [{
+					"code" : "26F3",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["golfer"],
+			"codepoints" : [{
+					"code" : "1F3CC",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["ice skate"],
+			"codepoints" : [{
+					"code" : "26F8",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["skier"],
+			"codepoints" : [{
+					"code" : "26F7",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["snowboarder"],
+			"codepoints" : [{
+					"code" : "1F3C2",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["surfer"],
+			"codepoints" : [{
+					"code" : "1F3C4",
+					"has_modifier" : true
+				}
+			]
+		}, {
+			"phrases" : ["horse racing"],
+			"codepoints" : [{
+					"code" : "1F3C7",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["swimmer"],
+			"codepoints" : [{
+					"code" : "1F3CA",
+					"has_modifier" : true
+				}
+			]
+		}, {
+			"phrases" : ["person with ball"],
+			"codepoints" : [{
+					"code" : "26F9",
+					"has_modifier" : true
+				}
+			]
+		}, {
+			"phrases" : ["weight lifter"],
+			"codepoints" : [{
+					"code" : "1F3CB",
+					"has_modifier" : true
+				}
+			]
+		}, {
+			"phrases" : ["bicyclist"],
+			"codepoints" : [{
+					"code" : "1F6B4",
+					"has_modifier" : true
+				}
+			]
+		}, {
+			"phrases" : ["racing car"],
+			"codepoints" : [{
+					"code" : "1F3CE",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["person doing cartwheel"],
+			"codepoints" : [{
+					"code" : "1F938",
+					"has_modifier" : true
+				}
+			]
+		}, {
+			"phrases" : ["wrestlers"],
+			"codepoints" : [{
+					"code" : "1F93C",
+					"has_modifier" : true
+				}
+			]
+		}, {
+			"phrases" : ["water polo"],
+			"codepoints" : [{
+					"code" : "1F93D",
+					"has_modifier" : true
+				}
+			]
+		}, {
+			"phrases" : ["handball"],
+			"codepoints" : [{
+					"code" : "1F93E",
+					"has_modifier" : true
+				}
+			]
+		}, {
+			"phrases" : ["fencer"],
+			"codepoints" : [{
+					"code" : "1F93A",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["goal net"],
+			"codepoints" : [{
+					"code" : "1F945",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["juggling"],
+			"codepoints" : [{
+					"code" : "1F939",
+					"has_modifier" : true
+				}
+			]
+		}, {
+			"phrases" : ["direct hit"],
+			"codepoints" : [{
+					"code" : "1F3AF",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["video game"],
+			"codepoints" : [{
+					"code" : "1F3AE",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["joystick"],
+			"codepoints" : [{
+					"code" : "1F579",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["game die"],
+			"codepoints" : [{
+					"code" : "1F3B2",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["flower playing cards"],
+			"codepoints" : [{
+					"code" : "1F3B4",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["speaker"],
+			"codepoints" : [{
+					"code" : "1F508",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["postal horn"],
+			"codepoints" : [{
+					"code" : "1F4EF",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["bell"],
+			"codepoints" : [{
+					"code" : "1F514",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["musical score"],
+			"codepoints" : [{
+					"code" : "1F3BC",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["musical note"],
+			"codepoints" : [{
+					"code" : "1F3B5",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["studio microphone"],
+			"codepoints" : [{
+					"code" : "1F399",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["level slider"],
+			"codepoints" : [{
+					"code" : "1F39A",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["control knobs"],
+			"codepoints" : [{
+					"code" : "1F39B",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["microphone"],
+			"codepoints" : [{
+					"code" : "1F3A4",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["headphone"],
+			"codepoints" : [{
+					"code" : "1F3A7",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["radio"],
+			"codepoints" : [{
+					"code" : "1F4FB",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["saxophone"],
+			"codepoints" : [{
+					"code" : "1F3B7",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["guitar"],
+			"codepoints" : [{
+					"code" : "1F3B8",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["musical keyboard"],
+			"codepoints" : [{
+					"code" : "1F3B9",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["trumpet"],
+			"codepoints" : [{
+					"code" : "1F3BA",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["violin"],
+			"codepoints" : [{
+					"code" : "1F3BB",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["drum with drumsticks"],
+			"codepoints" : [{
+					"code" : "1F941",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["mobile phone"],
+			"codepoints" : [{
+					"code" : "1F4F1",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["telephone receiver"],
+			"codepoints" : [{
+					"code" : "1F4DE",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["pager"],
+			"codepoints" : [{
+					"code" : "1F4DF",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["fax machine"],
+			"codepoints" : [{
+					"code" : "1F4E0",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["battery"],
+			"codepoints" : [{
+					"code" : "1F50B",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["electric plug"],
+			"codepoints" : [{
+					"code" : "1F50C",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["desktop computer"],
+			"codepoints" : [{
+					"code" : "1F5A5",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["printer"],
+			"codepoints" : [{
+					"code" : "1F5A8",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["keyboard"],
+			"codepoints" : [{
+					"code" : "2328",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["trackball"],
+			"codepoints" : [{
+					"code" : "1F5B2",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["minidisc"],
+			"codepoints" : [{
+					"code" : "1F4BD",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["floppy disk"],
+			"codepoints" : [{
+					"code" : "1F4BE",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["optical disc"],
+			"codepoints" : [{
+					"code" : "1F4BF",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["dvd"],
+			"codepoints" : [{
+					"code" : "1F4C0",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["movie camera"],
+			"codepoints" : [{
+					"code" : "1F3A5",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["film frames"],
+			"codepoints" : [{
+					"code" : "1F39E",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["film projector"],
+			"codepoints" : [{
+					"code" : "1F4FD",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["clapper board"],
+			"codepoints" : [{
+					"code" : "1F3AC",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["television"],
+			"codepoints" : [{
+					"code" : "1F4FA",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["camera"],
+			"codepoints" : [{
+					"code" : "1F4F7",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["camera with flash"],
+			"codepoints" : [{
+					"code" : "1F4F8",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["video camera"],
+			"codepoints" : [{
+					"code" : "1F4F9",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["videocassette"],
+			"codepoints" : [{
+					"code" : "1F4FC",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["left - pointing magnifying glass"],
+			"codepoints" : [{
+					"code" : "1F50D",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["right - pointing magnifying glass"],
+			"codepoints" : [{
+					"code" : "1F50E",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["microscope"],
+			"codepoints" : [{
+					"code" : "1F52C",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["telescope"],
+			"codepoints" : [{
+					"code" : "1F52D",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["satellite antenna"],
+			"codepoints" : [{
+					"code" : "1F4E1",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["candle"],
+			"codepoints" : [{
+					"code" : "1F56F",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["notebook with decorative cover"],
+			"codepoints" : [{
+					"code" : "1F4D4",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["closed book"],
+			"codepoints" : [{
+					"code" : "1F4D5",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["open book"],
+			"codepoints" : [{
+					"code" : "1F4D6",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["green book"],
+			"codepoints" : [{
+					"code" : "1F4D7",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["blue book"],
+			"codepoints" : [{
+					"code" : "1F4D8",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["orange book"],
+			"codepoints" : [{
+					"code" : "1F4D9",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["books"],
+			"codepoints" : [{
+					"code" : "1F4DA",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["notebook"],
+			"codepoints" : [{
+					"code" : "1F4D3",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["ledger"],
+			"codepoints" : [{
+					"code" : "1F4D2",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["page with curl"],
+			"codepoints" : [{
+					"code" : "1F4C3",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["scroll"],
+			"codepoints" : [{
+					"code" : "1F4DC",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["page facing up"],
+			"codepoints" : [{
+					"code" : "1F4C4",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["newspaper"],
+			"codepoints" : [{
+					"code" : "1F4F0",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["rolled - up newspaper"],
+			"codepoints" : [{
+					"code" : "1F5DE",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["bookmark tabs"],
+			"codepoints" : [{
+					"code" : "1F4D1",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["bookmark"],
+			"codepoints" : [{
+					"code" : "1F516",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["label"],
+			"codepoints" : [{
+					"code" : "1F3F7",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["money bag"],
+			"codepoints" : [{
+					"code" : "1F4B0",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["money with wings"],
+			"codepoints" : [{
+					"code" : "1F4B8",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["credit card"],
+			"codepoints" : [{
+					"code" : "1F4B3",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["currency exchange"],
+			"codepoints" : [{
+					"code" : "1F4B1",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["heavy dollar sign"],
+			"codepoints" : [{
+					"code" : "1F4B2",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["envelope"],
+			"codepoints" : [{
+					"code" : "2709",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["incoming envelope"],
+			"codepoints" : [{
+					"code" : "1F4E8",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["outbox tray"],
+			"codepoints" : [{
+					"code" : "1F4E4",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["inbox tray"],
+			"codepoints" : [{
+					"code" : "1F4E5",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["package"],
+			"codepoints" : [{
+					"code" : "1F4E6",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["closed mailbox with raised flag"],
+			"codepoints" : [{
+					"code" : "1F4EB",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["closed mailbox with lowered flag"],
+			"codepoints" : [{
+					"code" : "1F4EA",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["open mailbox with raised flag"],
+			"codepoints" : [{
+					"code" : "1F4EC",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["open mailbox with lowered flag"],
+			"codepoints" : [{
+					"code" : "1F4ED",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["postbox"],
+			"codepoints" : [{
+					"code" : "1F4EE",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["ballot box with ballot"],
+			"codepoints" : [{
+					"code" : "1F5F3",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["pencil"],
+			"codepoints" : [{
+					"code" : "270F",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["black nib"],
+			"codepoints" : [{
+					"code" : "2712",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["memo"],
+			"codepoints" : [{
+					"code" : "1F4DD",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["briefcase"],
+			"codepoints" : [{
+					"code" : "1F4BC",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["file folder"],
+			"codepoints" : [{
+					"code" : "1F4C1",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["open file folder"],
+			"codepoints" : [{
+					"code" : "1F4C2",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["card index dividers"],
+			"codepoints" : [{
+					"code" : "1F5C2",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["calendar"],
+			"codepoints" : [{
+					"code" : "1F4C5",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["tear - off calendar"],
+			"codepoints" : [{
+					"code" : "1F4C6",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["card index"],
+			"codepoints" : [{
+					"code" : "1F4C7",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["bar chart"],
+			"codepoints" : [{
+					"code" : "1F4CA",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["clipboard"],
+			"codepoints" : [{
+					"code" : "1F4CB",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["pushpin"],
+			"codepoints" : [{
+					"code" : "1F4CC",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["round pushpin"],
+			"codepoints" : [{
+					"code" : "1F4CD",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["paperclip"],
+			"codepoints" : [{
+					"code" : "1F4CE",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["linked paperclips"],
+			"codepoints" : [{
+					"code" : "1F587",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["straight ruler"],
+			"codepoints" : [{
+					"code" : "1F4CF",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["triangular ruler"],
+			"codepoints" : [{
+					"code" : "1F4D0",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["card file box"],
+			"codepoints" : [{
+					"code" : "1F5C3",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["file cabinet"],
+			"codepoints" : [{
+					"code" : "1F5C4",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["wastebasket"],
+			"codepoints" : [{
+					"code" : "1F5D1",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["lock"],
+			"codepoints" : [{
+					"code" : "1F512",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["open lock"],
+			"codepoints" : [{
+					"code" : "1F513",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["closed lock with key"],
+			"codepoints" : [{
+					"code" : "1F510",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["key"],
+			"codepoints" : [{
+					"code" : "1F511",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["old key"],
+			"codepoints" : [{
+					"code" : "1F5DD",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["hammer"],
+			"codepoints" : [{
+					"code" : "1F528",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["pick"],
+			"codepoints" : [{
+					"code" : "26CF",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["hammer and pick"],
+			"codepoints" : [{
+					"code" : "2692",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["hammer and wrench"],
+			"codepoints" : [{
+					"code" : "1F6E0",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["crossed swords"],
+			"codepoints" : [{
+					"code" : "2694",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["pistol"],
+			"codepoints" : [{
+					"code" : "1F52B",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["bow and arrow"],
+			"codepoints" : [{
+					"code" : "1F3F9",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["shield"],
+			"codepoints" : [{
+					"code" : "1F6E1",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["wrench"],
+			"codepoints" : [{
+					"code" : "1F527",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["nut and bolt"],
+			"codepoints" : [{
+					"code" : "1F529",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["gear"],
+			"codepoints" : [{
+					"code" : "2699",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["compression"],
+			"codepoints" : [{
+					"code" : "1F5DC",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["alembic"],
+			"codepoints" : [{
+					"code" : "2697",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["chains"],
+			"codepoints" : [{
+					"code" : "26D3",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["syringe"],
+			"codepoints" : [{
+					"code" : "1F489",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["pill"],
+			"codepoints" : [{
+					"code" : "1F48A",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["coffin"],
+			"codepoints" : [{
+					"code" : "26B0",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["funeral urn"],
+			"codepoints" : [{
+					"code" : "26B1",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["oil drum"],
+			"codepoints" : [{
+					"code" : "1F6E2",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["crystal ball"],
+			"codepoints" : [{
+					"code" : "1F52E",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["shopping trolley"],
+			"codepoints" : [{
+					"code" : "1F6D2",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["restroom"],
+			"codepoints" : [{
+					"code" : "1F6BB",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["baby symbol"],
+			"codepoints" : [{
+					"code" : "1F6BC",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["water closet"],
+			"codepoints" : [{
+					"code" : "1F6BE",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["passport control"],
+			"codepoints" : [{
+					"code" : "1F6C2",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["customs"],
+			"codepoints" : [{
+					"code" : "1F6C3",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["baggage claim"],
+			"codepoints" : [{
+					"code" : "1F6C4",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["left luggage"],
+			"codepoints" : [{
+					"code" : "1F6C5",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["children crossing"],
+			"codepoints" : [{
+					"code" : "1F6B8",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["no entry"],
+			"codepoints" : [{
+					"code" : "26D4",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["no bicycles"],
+			"codepoints" : [{
+					"code" : "1F6B3",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["no pedestrians"],
+			"codepoints" : [{
+					"code" : "1F6B7",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["no mobile phones"],
+			"codepoints" : [{
+					"code" : "1F4F5",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["place of worship"],
+			"codepoints" : [{
+					"code" : "1F6D0",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["atom symbol"],
+			"codepoints" : [{
+					"code" : "269B",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["star of david"],
+			"codepoints" : [{
+					"code" : "2721",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["wheel of dharma"],
+			"codepoints" : [{
+					"code" : "2638",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["yin yang"],
+			"codepoints" : [{
+					"code" : "262F",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["latin cross"],
+			"codepoints" : [{
+					"code" : "271D",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["orthodox cross"],
+			"codepoints" : [{
+					"code" : "2626",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["star and crescent"],
+			"codepoints" : [{
+					"code" : "262A",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["peace symbol"],
+			"codepoints" : [{
+					"code" : "262E",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["name badge"],
+			"codepoints" : [{
+					"code" : "1F4DB",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["fleur - de - lis"],
+			"codepoints" : [{
+					"code" : "269C",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["japanese symbol for beginner"],
+			"codepoints" : [{
+					"code" : "1F530",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["trident emblem"],
+			"codepoints" : [{
+					"code" : "1F531",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["heavy large circle"],
+			"codepoints" : [{
+					"code" : "2B55",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["white heavy check mark"],
+			"codepoints" : [{
+					"code" : "2705",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["ballot box with check"],
+			"codepoints" : [{
+					"code" : "2611",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["heavy check mark"],
+			"codepoints" : [{
+					"code" : "2714",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["heavy multiplication x"],
+			"codepoints" : [{
+					"code" : "2716",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["cross mark"],
+			"codepoints" : [{
+					"code" : "274C",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["heavy plus sign"],
+			"codepoints" : [{
+					"code" : "2795",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["heavy minus sign"],
+			"codepoints" : [{
+					"code" : "2796",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["heavy division sign"],
+			"codepoints" : [{
+					"code" : "2797",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["curly loop"],
+			"codepoints" : [{
+					"code" : "27B0",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["double curly loop"],
+			"codepoints" : [{
+					"code" : "27BF",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["part alternation mark"],
+			"codepoints" : [{
+					"code" : "303D",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["sparkle"],
+			"codepoints" : [{
+					"code" : "2747",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["double exclamation mark"],
+			"codepoints" : [{
+					"code" : "203C",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["exclamation question mark"],
+			"codepoints" : [{
+					"code" : "2049",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["wavy dash"],
+			"codepoints" : [{
+					"code" : "3030",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["aries"],
+			"codepoints" : [{
+					"code" : "2648",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["taurus"],
+			"codepoints" : [{
+					"code" : "2649",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["gemini"],
+			"codepoints" : [{
+					"code" : "264A",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["cancer"],
+			"codepoints" : [{
+					"code" : "264B",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["leo"],
+			"codepoints" : [{
+					"code" : "264C",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["virgo"],
+			"codepoints" : [{
+					"code" : "264D",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["libra"],
+			"codepoints" : [{
+					"code" : "264E",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["scorpius"],
+			"codepoints" : [{
+					"code" : "264F",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["sagittarius"],
+			"codepoints" : [{
+					"code" : "2650",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["capricorn"],
+			"codepoints" : [{
+					"code" : "2651",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["aquarius"],
+			"codepoints" : [{
+					"code" : "2652",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["pisces"],
+			"codepoints" : [{
+					"code" : "2653",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["ophiuchus"],
+			"codepoints" : [{
+					"code" : "26CE",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["cinema"],
+			"codepoints" : [{
+					"code" : "1F3A6",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["vibration mode"],
+			"codepoints" : [{
+					"code" : "1F4F3",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["mobile phone off"],
+			"codepoints" : [{
+					"code" : "1F4F4",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["keycap number sign"],
+			"codepoints" : [{
+					"code" : "0023 FE0F 20E3",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["keycap asterisk"],
+			"codepoints" : [{
+					"code" : "002A FE0F 20E3",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["keycap digit zero"],
+			"codepoints" : [{
+					"code" : "0030 FE0F 20E3",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["keycap digit one"],
+			"codepoints" : [{
+					"code" : "0031 FE0F 20E3",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["keycap digit two"],
+			"codepoints" : [{
+					"code" : "0032 FE0F 20E3",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["keycap digit three"],
+			"codepoints" : [{
+					"code" : "0033 FE0F 20E3",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["keycap digit four"],
+			"codepoints" : [{
+					"code" : "0034 FE0F 20E3",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["keycap digit five"],
+			"codepoints" : [{
+					"code" : "0035 FE0F 20E3",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["keycap digit six"],
+			"codepoints" : [{
+					"code" : "0036 FE0F 20E3",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["keycap digit seven"],
+			"codepoints" : [{
+					"code" : "0037 FE0F 20E3",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["keycap digit eight"],
+			"codepoints" : [{
+					"code" : "0038 FE0F 20E3",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["keycap digit nine"],
+			"codepoints" : [{
+					"code" : "0039 FE0F 20E3",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["keycap ten"],
+			"codepoints" : [{
+					"code" : "1F51F",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["squared cl"],
+			"codepoints" : [{
+					"code" : "1F191",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["squared cool"],
+			"codepoints" : [{
+					"code" : "1F192",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["squared free"],
+			"codepoints" : [{
+					"code" : "1F193",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["information source"],
+			"codepoints" : [{
+					"code" : "2139",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["squared id"],
+			"codepoints" : [{
+					"code" : "1F194",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["squared new"],
+			"codepoints" : [{
+					"code" : "1F195",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["squared ng"],
+			"codepoints" : [{
+					"code" : "1F196",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["squared ok"],
+			"codepoints" : [{
+					"code" : "1F197",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["squared sos"],
+			"codepoints" : [{
+					"code" : "1F198",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["squared vs"],
+			"codepoints" : [{
+					"code" : "1F19A",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["squared katakana koko"],
+			"codepoints" : [{
+					"code" : "1F201",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["squared katakana sa"],
+			"codepoints" : [{
+					"code" : "1F202",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["black small square"],
+			"codepoints" : [{
+					"code" : "25AA",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["white small square"],
+			"codepoints" : [{
+					"code" : "25AB",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["white medium square"],
+			"codepoints" : [{
+					"code" : "25FB",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["black medium square"],
+			"codepoints" : [{
+					"code" : "25FC",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["black large square"],
+			"codepoints" : [{
+					"code" : "2B1B",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["white large square"],
+			"codepoints" : [{
+					"code" : "2B1C",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["large orange diamond"],
+			"codepoints" : [{
+					"code" : "1F536",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["large blue diamond"],
+			"codepoints" : [{
+					"code" : "1F537",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["small orange diamond"],
+			"codepoints" : [{
+					"code" : "1F538",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["small blue diamond"],
+			"codepoints" : [{
+					"code" : "1F539",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["radio button"],
+			"codepoints" : [{
+					"code" : "1F518",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["black square button"],
+			"codepoints" : [{
+					"code" : "1F532",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["white square button"],
+			"codepoints" : [{
+					"code" : "1F533",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["chequered flag"],
+			"codepoints" : [{
+					"code" : "1F3C1",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["crossed flags"],
+			"codepoints" : [{
+					"code" : "1F38C",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["waving black flag"],
+			"codepoints" : [{
+					"code" : "1F3F4",
+					"has_modifier" : false
+				}
+			]
+		}, {
+			"phrases" : ["waving white flag"],
+			"codepoints" : [{
+					"code" : "1F3F3",
+					"has_modifier" : false
+				}
+			]
+		}
+	]
+}

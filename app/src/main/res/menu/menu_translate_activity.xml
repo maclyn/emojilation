@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+	  xmlns:app="http://schemas.android.com/apk/res-auto">
+	<item
+		android:id="@+id/save_emoji"
+		android:title="@string/save"
+		android:icon="@drawable/ic_save_white_24dp"
+		android:orderInCategory="1"
+		app:showAsAction="ifRoom"/>
+
+	<item
+		android:id="@+id/search_emoji"
+		android:orderInCategory="2"
+		android:icon="@drawable/ic_search_white_24dp"
+		app:showAsAction="always|collapseActionView"
+		app:actionViewClass="android.support.v7.widget.SearchView"
+		android:title="@string/search_emoji"/>
+
+	<item
+		android:id="@+id/load_emoji"
+		android:orderInCategory="3"
+		android:title="@string/load_dictionary" />
+</menu>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="16dp">
+
+    <ScrollView
+        android:layout_above="@+id/submit_container"
+        android:id="@+id/main_translate_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/og_message"
+                android:hint="@string/your_original_text"
+                android:layout_width="match_parent"
+                android:inputType="none"
+                android:layout_height="wrap_content"
+				android:singleLine="true" />
+
+            <Button
+                android:id="@+id/translate_button"
+                android:text="@string/translate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"/>
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.inipage.translatetoemoji.TranslationView
+                    android:id="@+id/translation_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </HorizontalScrollView>
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:id="@+id/submit_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:text="@string/copy_emoji_message"
+            android:layout_weight="1"
+            android:id="@+id/copy_message"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_gravity="center_vertical" />
+
+        <Button
+            android:text="@string/replace_original_message"
+            android:layout_weight="1"
+            android:id="@+id/replace_message"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_gravity="center_vertical" />
+    </LinearLayout>
+</RelativeLayout>
