@@ -9,6 +9,7 @@ import android.graphics.RectF;
 import android.graphics.Typeface;
 import android.text.TextPaint;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 
@@ -22,15 +23,29 @@ public class TranslationView extends View {
 	public static final String TAG = "TranslationView";
 
 	private float ROW_HEIGHT = getResources().getDimension(R.dimen.emoji_row_depth);
-	private float LETTER_WIDTH = getResources().getDimension(R.dimen.monospaced_text_block);
+	private float FONT_SIZE = getResources().getDimension(R.dimen.monospaced_text_block);
 	private float BOX_THICKNESS = getResources().getDimension(R.dimen.emoji_box_width);
+	private float HORIZONTAL_PADDING = getResources().getDimension(R.dimen.emoji_view_horizontal_padding);
 
+	//Fixed dimensions
 	private int RECTANGLE_STROKE_COLOR = getResources().getColor(R.color.rectangle_stroke);
 	private int RECTANGLE_SELECTED_FILL_COLOR = getResources().getColor(R.color.rectangle_selected_fill);
+
+	//Dimensions calculated at runtime
+	private float perCharacterWidth;
+	private float expectedCharacterBaseline;
+	private float expectedCharacterRowHeight;
+	private float expectedWidth;
+	private float expectedHeight;
+	private float leftBoxPadding;
+	private float topBoxPadding;
+	private float bottomBoxPadding;
+	private float rightBoxPadding;
 
 	private Paint rectanglePaint;
 	private TextPaint characterPaint;
 	private TextPaint emojiPaint;
+
 	private Rect tempRect = new Rect();
 	private RectF tempRectF = new RectF();
 
@@ -43,7 +58,7 @@ public class TranslationView extends View {
 		super(context, attrs);
 
 		characterPaint = new TextPaint();
-		characterPaint.setTextSize(LETTER_WIDTH);
+		characterPaint.setTextSize(FONT_SIZE);
 		characterPaint.setColor(Color.BLACK);
 		characterPaint.setTypeface(Typeface.MONOSPACE);
 		characterPaint.setTextAlign(Paint.Align.LEFT);
@@ -57,7 +72,7 @@ public class TranslationView extends View {
 		emojiPaint = new TextPaint();
 		emojiPaint.setTextSize(ROW_HEIGHT / 2f);
 		emojiPaint.setColor(Color.BLACK);
-		characterPaint.setTypeface(Typeface.MONOSPACE);
+		emojiPaint.setTypeface(Typeface.MONOSPACE);
 		emojiPaint.setTextAlign(Paint.Align.LEFT);
 	}
 
@@ -66,6 +81,22 @@ public class TranslationView extends View {
 		this.mTranslations = translations;
 		this.mInited = true;
 		this.mReady = false;
+
+		characterPaint.getTextBounds(mText, 0, mText.length(), tempRect);
+		expectedCharacterRowHeight = tempRect.height();
+		expectedCharacterBaseline = -tempRect.top;
+
+		//Note: Simplifying by making tempRect.width() / mText.length will not yield the right value! We must experimentally measure here
+		float[] out = new float[1];
+		characterPaint.getTextWidths("a", out);
+		perCharacterWidth = out[0];
+		
+		leftBoxPadding = BOX_THICKNESS + HORIZONTAL_PADDING;
+		rightBoxPadding = BOX_THICKNESS + HORIZONTAL_PADDING;
+		topBoxPadding = BOX_THICKNESS + (mTranslations.isEmpty() ? 0 : expectedCharacterRowHeight);
+		bottomBoxPadding = BOX_THICKNESS;
+		expectedWidth = leftBoxPadding + tempRect.width() + rightBoxPadding;
+		expectedHeight = topBoxPadding + ((ROW_HEIGHT + BOX_THICKNESS) * mTranslations.size()) + bottomBoxPadding;
 
 		requestLayout();
 		invalidate();
@@ -137,27 +168,24 @@ public class TranslationView extends View {
 		}
 
 		//(1) Draw the text
-		//TODO: Align to baseline, not centering (as is, each _character_ is being centered about itself)
-		int availableHeight = getHeight();
-		int availableWidth = getWidth();
-		for(int i = 0; i < mText.length(); i++){
-			char[] c = new char[] { mText.charAt(i) };
-			characterPaint.getTextBounds(c, 0, 1, tempRect);
-
-			int startX = (int) (i * LETTER_WIDTH);
-			int startY = 0;
-			canvas.drawText(c, 0, 1, startX + (LETTER_WIDTH / 2) - (tempRect.width() / 2), startY + (LETTER_WIDTH / 2) + (tempRect.height() / 2), characterPaint);
-		}
+		canvas.drawText(mText, 0, mText.length(), leftBoxPadding, expectedCharacterBaseline, characterPaint);
 
 		//(2) Draw each row
+		float yOffset = topBoxPadding;
 		for(int i = 0; i < mTranslations.size(); i++){
 			List<TranslationChunk> chunks = mTranslations.get(i);
 			for(int j = 0; j < chunks.size(); j++){
 				TranslationChunk chunk = chunks.get(j);
 
+				//So... the awkward fact is that, while it might be nice to
 				//(2.1) Draw the rectangle for the chunk
-				//Bounds are from [startIndex * LETTER_WIDTH] to [endIndex * LETTER_WIDTH]
-				tempRectF.set(chunk.getStartIndex() * LETTER_WIDTH, LETTER_WIDTH + (i * ROW_HEIGHT), (chunk.getEndIndex() + 1) * LETTER_WIDTH, LETTER_WIDTH + ((i + 1) * ROW_HEIGHT));
+				//Bounds are from [startIndex * FONT_SIZE] to [endIndex * FONT_SIZE]
+				tempRectF.set(
+						leftBoxPadding + (chunk.getStartIndex() * perCharacterWidth),
+						yOffset,
+						leftBoxPadding + (chunk.getEndIndex() + 1) * perCharacterWidth,
+						yOffset + (ROW_HEIGHT + BOX_THICKNESS)
+				);
 
 				if(chunk.isSelected()) {
 					rectanglePaint.setStyle(Paint.Style.FILL);
@@ -184,11 +212,92 @@ public class TranslationView extends View {
 						startY,
 						emojiPaint);
 			}
+
+			yOffset += (ROW_HEIGHT + BOX_THICKNESS);
 		}
 	}
 
 	@Override
 	public boolean onTouchEvent(MotionEvent event) {
+		switch(event.getAction()){
+			case MotionEvent.ACTION_DOWN:
+				return true; //We want to eat this
+			case MotionEvent.ACTION_UP:
+				//Calculate where we are
+				Log.d(TAG, "X/Y: " + event.getX() + ", " + event.getY());
+
+				float x = event.getX();
+				float y = event.getY();
+
+				//(1) First, we narrow down by Y coordinates
+				if(y < topBoxPadding){
+					Log.d(TAG, "Tapped in text");
+				} else {
+					//We're in a row somewhere; figure out which row
+					y -= topBoxPadding;
+
+					int row = (int) Math.floor((y - topBoxPadding) / (ROW_HEIGHT + BOX_THICKNESS));
+					if(row < 0) row = 0; //TODO: Why do we need this?
+
+					if(row < mTranslations.size()){
+						Log.d(TAG, "In row " + row);
+
+						//Calculate which box we're over
+						int characterTapped = (int) Math.floor((x - leftBoxPadding) / perCharacterWidth);
+
+						Log.d(TAG, "Tapped character: " + characterTapped);
+
+						TranslationChunk toSelect = null;
+						for(TranslationChunk chunk : mTranslations.get(row)){
+							if(characterTapped >= chunk.getStartIndex()  && characterTapped <= chunk.getEndIndex()){
+								toSelect = chunk;
+								break;
+							}
+						}
+
+						if(toSelect != null){
+							Log.d(TAG, "Tapped translation with display: " + toSelect.getDisplay());
+
+							if(!toSelect.isSelected()) {
+								int targetStartIndex = toSelect.getStartIndex();
+								int targetEndIndex = toSelect.getEndIndex();
+
+								//Deselect anything below and above
+								for (int i = 0; i < mTranslations.size(); i++) {
+									if (i == row) continue;
+
+									List<TranslationChunk> chunkRow = mTranslations.get(i);
+									for (TranslationChunk chunk : chunkRow) {
+										if(!chunk.isSelected()) continue;
+
+										int currentStartIndex = chunk.getStartIndex();
+										int currentEndIndex = chunk.getEndIndex();
+
+										if(targetStartIndex >= currentStartIndex && targetStartIndex <= currentEndIndex)
+											chunk.setSelected(false);
+										else if (targetEndIndex >= currentStartIndex && targetEndIndex <= currentEndIndex)
+											chunk.setSelected(false);
+									}
+								}
+
+								toSelect.setSelected(true);
+								invalidate();
+							} else {
+								//TODO: Present a picker using available options
+								toSelect.setSelected(false);
+								invalidate();
+							}
+						} else {
+							Log.d(TAG, "Nothing was selected");
+						}
+					} else {
+						Log.d(TAG, "Out of any rows!");
+					}
+				}
+				return true; //Also doesn't really matter
+			case MotionEvent.ACTION_CANCEL:
+				return false; //Doesn't matter in any case
+		}
 		return super.onTouchEvent(event);
 	}
 
@@ -199,10 +308,7 @@ public class TranslationView extends View {
 
 		if(widthMode == MeasureSpec.UNSPECIFIED && heightMode == MeasureSpec.UNSPECIFIED){
 			if(mInited){
-				//Calculate needed height; it is ROW_HEIGHT * number of rows + 1
-				int neededHeight = (int) ((ROW_HEIGHT * mTranslations.size()) + LETTER_WIDTH);
-				int neededWidth = (int) (LETTER_WIDTH * mText.length());
-				setMeasuredDimension(neededWidth, neededHeight);
+				setMeasuredDimension((int) expectedWidth, (int) expectedHeight);
 				mReady = true;
 			} else {
 				mReady = false;

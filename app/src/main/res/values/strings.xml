@@ -47,4 +47,7 @@
 	<string name="dictionary_load_expl">Place your custom dictionaries in the EmojiTranslateDictionaries on your phone\'s storage.</string>
 	<string name="dictionary_loaded">Your dictionary has been loaded.</string>
 	<string name="unable_to_load">Unable to load dictionary!</string>
+    <string name="no_phrase">No phrase</string>
+    <string name="no_emojis">No emojis</string>
+    <string name="search_for_phrases">Enter a phrase to find emoji</string>
 </resources>

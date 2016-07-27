@@ -16,6 +16,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -26,6 +27,7 @@ import android.widget.Toast;
 
 import com.inipage.translatetoemoji.model.Codepoint;
 import com.inipage.translatetoemoji.model.EmojiEntry;
+import com.inipage.translatetoemoji.utils.DividerItemViewDecoration;
 import com.inipage.translatetoemoji.workingmodel.PhrasePiece;
 import com.inipage.translatetoemoji.workingmodel.TranslationChunk;
 
@@ -34,7 +36,9 @@ import java.util.List;
 
 public class EditFragment extends Fragment {
 	RecyclerView recyclerView;
+	RecyclerView suggestionsView;
 	FloatingActionButton addPhrase;
+	FragmentHostInterface host;
 
 	public static EditFragment getInstance() {
 		EditFragment fragment = new EditFragment();
@@ -43,6 +47,12 @@ public class EditFragment extends Fragment {
 		fragment.setArguments(args);
 
 		return fragment;
+	}
+
+	@Override
+	public void onAttach(Activity activity) {
+		super.onAttach(activity);
+		host = (FragmentHostInterface) activity;
 	}
 
 	@Override
@@ -57,6 +67,9 @@ public class EditFragment extends Fragment {
 
 		recyclerView = (RecyclerView) layout.findViewById(R.id.recycler_view);
 		addPhrase = (FloatingActionButton) layout.findViewById(R.id.add_entry);
+		suggestionsView = (RecyclerView) layout.findViewById(R.id.suggestions_view);
+		suggestionsView.setLayoutManager(new LinearLayoutManager(getContext()));
+		suggestionsView.addItemDecoration(new DividerItemViewDecoration(getContext(), LinearLayoutManager.VERTICAL));
 
 		return layout;
 	}
@@ -132,5 +145,33 @@ public class EditFragment extends Fragment {
 
 	public void setAdapter() {
 		recyclerView.setAdapter(new DictionaryAdapter(getContext(), LoadedDict.getInstance().exposeEntries()));
+	}
+
+	public void onQueryTextSubmit(String query) { //Pick the top element of the adapter
+		suggestionsView.setVisibility(View.GONE);
+		addPhrase.show();
+
+		SuggestionsAdapter adapter = (SuggestionsAdapter) suggestionsView.getAdapter();
+		int choice = adapter.getCardPosition(0);
+		if(choice != -1) recyclerView.scrollToPosition(choice);
+	}
+
+	public void onQueryTextChange(String query) {
+		if(query.isEmpty()){
+			suggestionsView.setVisibility(View.GONE);
+			addPhrase.show();
+		} else {
+			suggestionsView.setVisibility(View.VISIBLE);
+			addPhrase.hide();
+			suggestionsView.setAdapter(new SuggestionsAdapter(query, new SuggestionsAdapter.OnSuggestionChosenListener() {
+				@Override
+				public void onSuggestionChosen(int entryIndex) {
+					host.collapseSearchView();
+					suggestionsView.setVisibility(View.GONE);
+					addPhrase.show();
+					recyclerView.scrollToPosition(entryIndex);
+				}
+			}));
+		}
 	}
 }

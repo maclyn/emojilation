@@ -8,4 +8,6 @@
     <color name="rectangle_selected_fill">#6000ff00</color>
     <color name="textColorPrimary">#101010</color>
     <color name="textColorSecondary">#303030</color>
+    <color name="black">#000000</color>
+    <color name="ligher_white">#a0ffffff</color>
 </resources>

@@ -16,8 +16,11 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.view.menu.ActionMenuItem;
+import android.support.v7.widget.AppCompatTextView;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -38,7 +41,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class EmojiTranslateActivity extends AppCompatActivity {
+public class EmojiTranslateActivity extends AppCompatActivity implements FragmentHostInterface {
+	private static final String TAG = "EmojiTranslateActivity";
+
 	public class MainFragmentAdapter extends FragmentPagerAdapter {
 		Fragment translateFragment;
 		Fragment editFragment;
@@ -139,6 +144,9 @@ public class EmojiTranslateActivity extends AppCompatActivity {
 		tabs.setupWithViewPager(pager);
 	}
 
+	MenuItem actionMenuItem;
+	SearchView searchView;
+
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		super.onCreateOptionsMenu(menu);
@@ -146,28 +154,54 @@ public class EmojiTranslateActivity extends AppCompatActivity {
 		getMenuInflater().inflate(R.menu.menu_translate_activity, menu);
 		this.menu = menu;
 
-		final MenuItem actionMenuItem = menu.findItem(R.id.search_emoji);
-		final SearchView searchView = (SearchView) actionMenuItem.getActionView();
+		actionMenuItem = menu.findItem(R.id.search_emoji);
+		searchView = (SearchView) actionMenuItem.getActionView();
+
 		searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
 			@Override
 			public boolean onQueryTextSubmit(String query) {
-				if (!searchView.isIconified()) {
-					searchView.setIconified(true);
-				}
-				actionMenuItem.collapseActionView();
-
-				Toast.makeText(EmojiTranslateActivity.this, query, Toast.LENGTH_SHORT).show();
-				return false;
+				collapseSearchView();
+				EditFragment edit = (EditFragment) ((FragmentPagerAdapter) pager.getAdapter()).getItem(1);
+				edit.onQueryTextSubmit(query);
+				return true;
 			}
 
 			@Override
 			public boolean onQueryTextChange(String s) {
-				Toast.makeText(EmojiTranslateActivity.this, s, Toast.LENGTH_SHORT).show();
+				if(s.isEmpty()){ //Initial state!
+					SearchView.SearchAutoComplete mSearchSrcTextView = (SearchView.SearchAutoComplete) findViewById(android.support.v7.appcompat.R.id.search_src_text);
+					if(mSearchSrcTextView != null){
+						mSearchSrcTextView.setTextColor(getColor(R.color.white));
+						mSearchSrcTextView.setHintTextColor(getColor(R.color.ligher_white));
+						mSearchSrcTextView.setHint(R.string.search_for_phrases);
+					}
+				}
+				EditFragment edit = (EditFragment) ((FragmentPagerAdapter) pager.getAdapter()).getItem(1);
+				edit.onQueryTextChange(s);
 				return false;
 			}
 		});
 
 		return true;
+	}
+
+	private View exposeView(ViewGroup view, Class<?> aClass) {
+		for(int i = 0; i < view.getChildCount(); i++){
+			View v = view.getChildAt(i);
+			Log.d(TAG, "Type: " + v.getClass().getName());
+			if(v.getClass().getName().equals(aClass.getName())){
+				return v;
+			} else if (v instanceof ViewGroup){
+				View v2 = exposeView((ViewGroup) v, aClass);
+				if(v2 != null) return v2;
+			}
+		}
+		return null;
+	}
+
+	public void collapseSearchView(){
+		searchView.setIconified(true);
+		actionMenuItem.collapseActionView();
 	}
 
 	@Override

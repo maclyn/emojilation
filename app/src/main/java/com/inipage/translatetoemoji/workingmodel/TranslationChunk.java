@@ -54,6 +54,10 @@ public class TranslationChunk {
 		return isSelected;
 	}
 
+	public Codepoint[] getOptions() {
+		return options;
+	}
+
 	/**
 	 * Get the length of original data represented by this chunk (different that the actual length in any resultant output!).
 	 * @return The length of the original data.

@@ -30,6 +30,7 @@
 				android:layout_height="wrap_content"/>
 
 			<ImageView
+				android:background="?android:attr/selectableItemBackground"
 				android:id="@+id/entry_edit"
 				android:src="@drawable/ic_more_vert_black_36dp"
 				android:layout_alignParentRight="true"

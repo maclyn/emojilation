@@ -4,5 +4,14 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
 		<item name="colorControlNormal">@color/white</item>
+		<item name="android:autoCompleteTextViewStyle">@style/CustomAutoCompleteStyle</item>
+	</style>
+
+	<style name="CustomAutoCompleteStyle" parent="Widget.AppCompat.AutoCompleteTextView">
+		<item name="android:textAppearance">@style/CustomTextAppearance</item>
+	</style>
+
+	<style name="CustomTextAppearance" parent="TextAppearance.AppCompat.Button" >
+		<item name="android:textColor">@color/white</item>
 	</style>
 </resources>
