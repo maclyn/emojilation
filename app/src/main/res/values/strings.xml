@@ -50,4 +50,14 @@
     <string name="no_phrase">No phrase</string>
     <string name="no_emojis">No emojis</string>
     <string name="search_for_phrases">Enter a phrase to find emoji</string>
+    <string name="add_another">Add</string>
+    <string name="manage_emoji">Manage emoji</string>
+    <string name="enter_entry">Enter entry</string>
+    <string name="nothing_yet">Nothing yet</string>
+    <string name="start_with_a_phrase">Start with a phrase</string>
+    <string name="you_must_have_a_phrase">You must include a phrase.</string>
+    <string name="cancelled">Cancelled.</string>
+    <string name="now_add_some_emoji">Now add some emoji</string>
+    <string name="entry_added">Entry added.</string>
+    <string name="you_already_have_an_entry">There\'s already an entry for one or more of these phrases!</string>
 </resources>

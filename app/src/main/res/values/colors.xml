@@ -10,4 +10,5 @@
     <color name="textColorSecondary">#303030</color>
     <color name="black">#000000</color>
     <color name="ligher_white">#a0ffffff</color>
+    <color name="rectangle_stroke_options">#0000ff</color>
 </resources>

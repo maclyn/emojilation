@@ -13,6 +13,7 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 
+import com.inipage.translatetoemoji.model.Codepoint;
 import com.inipage.translatetoemoji.workingmodel.TranslationChunk;
 
 import java.util.HashMap;
@@ -29,6 +30,7 @@ public class TranslationView extends View {
 
 	//Fixed dimensions
 	private int RECTANGLE_STROKE_COLOR = getResources().getColor(R.color.rectangle_stroke);
+	private int RECTANGLE_OPTIONS_STROKE_COLOR = getResources().getColor(R.color.rectangle_stroke_options);
 	private int RECTANGLE_SELECTED_FILL_COLOR = getResources().getColor(R.color.rectangle_selected_fill);
 
 	//Dimensions calculated at runtime
@@ -45,9 +47,11 @@ public class TranslationView extends View {
 	private Paint rectanglePaint;
 	private TextPaint characterPaint;
 	private TextPaint emojiPaint;
+	private TextPaint scrapPaint;
 
 	private Rect tempRect = new Rect();
 	private RectF tempRectF = new RectF();
+	private Rect scrapRect = new Rect();
 
 	private String mText;
 	private List<List<TranslationChunk>> mTranslations;
@@ -74,6 +78,8 @@ public class TranslationView extends View {
 		emojiPaint.setColor(Color.BLACK);
 		emojiPaint.setTypeface(Typeface.MONOSPACE);
 		emojiPaint.setTextAlign(Paint.Align.LEFT);
+
+		scrapPaint = new TextPaint();
 	}
 
 	public void setup(String backingText, List<List<TranslationChunk>> translations){
@@ -193,17 +199,26 @@ public class TranslationView extends View {
 					canvas.drawRect(tempRectF, rectanglePaint);
 				}
 
-				rectanglePaint.setColor(RECTANGLE_STROKE_COLOR);
+				if(chunk.getOptions().length == 1) {
+					rectanglePaint.setColor(RECTANGLE_STROKE_COLOR);
+				} else {
+					rectanglePaint.setColor(RECTANGLE_OPTIONS_STROKE_COLOR);
+				}
 				rectanglePaint.setStyle(Paint.Style.STROKE);
 				canvas.drawRect(tempRectF, rectanglePaint);
 
 				//(2.2) Draw the emoji for the chunk (this CAN be totally centered)
 				String emojiChars = Utilities.convertDisplayFormatEmojisToString(chunk.getDisplay());
+				emojiPaint.setTextSize(calculateTextSizeForWidth(emojiChars, tempRectF.width(), ROW_HEIGHT / 2F));
 				emojiPaint.getTextBounds(emojiChars, 0, emojiChars.length(), tempRect);
 
 				//Center vertically and horizontally, relative to tempRectF (the bounds of the box)
 				int startX = (int) (tempRectF.right - (tempRectF.width() / 2) - (tempRect.width() / 2));
-				int startY = (int) ((tempRectF.bottom - (tempRectF.height() / 2)) + (tempRect.height() / 2));
+
+				//top of text region
+				int startY = (int) tempRectF.top;
+				startY += (tempRectF.height() - tempRect.height()) / 2;
+				startY += (-tempRect.top); //Maybe no plus?
 				canvas.drawText(
 						emojiChars,
 						0,
@@ -215,6 +230,15 @@ public class TranslationView extends View {
 
 			yOffset += (ROW_HEIGHT + BOX_THICKNESS);
 		}
+	}
+
+	//TODO: Credit the SO answer where I found the general algorithm
+	private float calculateTextSizeForWidth(String text, float width, float maximumSize){
+		final float testSize = 36f;
+		scrapPaint.setTextSize(testSize);
+		scrapPaint.getTextBounds(text, 0, text.length(), scrapRect);
+		float desiredTextSize = testSize * width / scrapRect.width();
+		return desiredTextSize > maximumSize ? maximumSize : desiredTextSize;
 	}
 
 	@Override
@@ -234,10 +258,18 @@ public class TranslationView extends View {
 					Log.d(TAG, "Tapped in text");
 				} else {
 					//We're in a row somewhere; figure out which row
-					y -= topBoxPadding;
+					int row = 0;
+					float zoneStart = topBoxPadding;
+					float zoneEnd = topBoxPadding + ROW_HEIGHT + BOX_THICKNESS;
+					while(zoneStart < getHeight()){
+						if(y >= zoneStart && y <= zoneEnd){
+							break;
+						}
 
-					int row = (int) Math.floor((y - topBoxPadding) / (ROW_HEIGHT + BOX_THICKNESS));
-					if(row < 0) row = 0; //TODO: Why do we need this?
+						zoneStart += (ROW_HEIGHT + BOX_THICKNESS);
+						zoneEnd += (ROW_HEIGHT + BOX_THICKNESS);
+						row++;
+					}
 
 					if(row < mTranslations.size()){
 						Log.d(TAG, "In row " + row);
@@ -258,7 +290,27 @@ public class TranslationView extends View {
 						if(toSelect != null){
 							Log.d(TAG, "Tapped translation with display: " + toSelect.getDisplay());
 
-							if(!toSelect.isSelected()) {
+							Codepoint[] opts = toSelect.getOptions();
+							int index = 0;
+							for(int i = 0; i < opts.length; i++){
+								if(opts[i].getCode().equals(toSelect.getDisplay())){
+									index = i;
+									break;
+								}
+							}
+
+							boolean isSelected = toSelect.isSelected();
+
+							if(isSelected){
+								if(index < opts.length - 1){ //Go to next option
+									toSelect.setDisplay(opts[index + 1].getCode());
+								} else { //Just move to first deselect
+									toSelect.setDisplay(opts[0].getCode());
+									toSelect.setSelected(false);
+								}
+							} else { //Just select at first
+								toSelect.setDisplay(opts[0].getCode());
+
 								int targetStartIndex = toSelect.getStartIndex();
 								int targetEndIndex = toSelect.getEndIndex();
 
@@ -281,12 +333,9 @@ public class TranslationView extends View {
 								}
 
 								toSelect.setSelected(true);
-								invalidate();
-							} else {
-								//TODO: Present a picker using available options
-								toSelect.setSelected(false);
-								invalidate();
 							}
+
+							invalidate();
 						} else {
 							Log.d(TAG, "Nothing was selected");
 						}

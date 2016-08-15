@@ -9,7 +9,7 @@
 	"emoji" : [{
 			"phrases" : ["grinning face"],
 			"codepoints" : [{
-					"code" : "1F600",
+					"code" : "1F600 1F61E 1F61E 1F61E",
 					"has_modifier" : false
 				}
 			]
@@ -3957,7 +3957,7 @@
 		}, {
 			"phrases" : ["admission tickets"],
 			"codepoints" : [{
-					"code" : "1F39F",
+					"code" : "1F39F 1F39F 1F39F 1F39F",
 					"has_modifier" : false
 				}
 			]

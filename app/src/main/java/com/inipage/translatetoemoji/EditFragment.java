@@ -11,7 +11,9 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.TypedValue;
@@ -28,10 +30,12 @@ import android.widget.Toast;
 import com.inipage.translatetoemoji.model.Codepoint;
 import com.inipage.translatetoemoji.model.EmojiEntry;
 import com.inipage.translatetoemoji.utils.DividerItemViewDecoration;
+import com.inipage.translatetoemoji.utils.RemovableItemDialogFragment;
 import com.inipage.translatetoemoji.workingmodel.PhrasePiece;
 import com.inipage.translatetoemoji.workingmodel.TranslationChunk;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class EditFragment extends Fragment {
@@ -89,62 +93,69 @@ public class EditFragment extends Fragment {
 	}
 
 	private void startAddEntry() {
-		Utilities.createEditTextAlertDialog(getContext(), new Utilities.EditTextDialogInterface() {
+		ArrayList<String> entries = new ArrayList<>();
+		RemovableItemDialogFragment df = RemovableItemDialogFragment.getInstance(entries, getString(R.string.start_with_a_phrase), getString(R.string.next), true);
+		df.setListener(new RemovableItemDialogFragment.RemovableItemDialogStateListener() {
 			@Override
-			public boolean onDone(String text) {
-				List<String> toSave = new ArrayList<>();
-				for(String s : text.split(",")){
-					toSave.add(s.trim());
-				}
-				if(toSave.isEmpty()) {
-					Toast.makeText(getContext(), getContext().getString(R.string.must_enter_one_phrase), Toast.LENGTH_SHORT).show();
-					return false;
+			public void onNext(List<String> entries) {
+				if (entries.isEmpty()) {
+					Toast.makeText(getContext(), R.string.you_must_have_a_phrase, Toast.LENGTH_SHORT).show();
 				} else {
-					addEmojiToNewEntry(toSave);
-					return true;
+					addEmojiToNewEntry(entries);
 				}
 			}
 
 			@Override
-			public void onCancelled() {
+			public void onGone() {
 			}
-		}, getString(R.string.add_phrases), null, getString(R.string.separate_with_commas), getString(R.string.next), false).show();
+		});
+		df.show(getChildFragmentManager(), "add_phrase");
 	}
 
+
 	private void addEmojiToNewEntry(final List<String> phrases) {
-		Utilities.createEditTextAlertDialog(getContext(), new Utilities.EditTextDialogInterface() {
+		ArrayList<String> entries = new ArrayList<>();
+		RemovableItemDialogFragment df = RemovableItemDialogFragment.getInstance(entries, getString(R.string.now_add_some_emoji), getString(R.string.add), true);
+		df.setListener(new RemovableItemDialogFragment.RemovableItemDialogStateListener() {
 			@Override
-			public boolean onDone(String text) {
+			public void onNext(List<String> entries) {
 				List<Codepoint> toSave = new ArrayList<>();
-				for(String s : text.split(",")) {
+
+				for(String s : entries) {
 					List<String> emojis = Utilities.createEmojiBlockFromString(s.trim());
-					for(String emoji : emojis){
-						toSave.add(new Codepoint(Utilities.getDisplayFormatForEmoji(emoji), false));
+					String saveFormat = "";
+					for(int i = 0; i < emojis.size(); i++){
+						saveFormat += Utilities.getDisplayFormatForEmoji(emojis.get(i));
+						if(i != emojis.size() - 1) saveFormat += " ";
 					}
+					toSave.add(new Codepoint(saveFormat, false));
 				}
 
-				if(toSave.isEmpty()) {
+				if(entries.isEmpty()) {
 					Toast.makeText(getContext(), getContext().getString(R.string.must_one_emoji), Toast.LENGTH_SHORT).show();
-					return false;
 				} else {
 					//Convert lists to arrays
 					String[] phrasesArray = phrases.toArray(new String[phrases.size()]);
 					Codepoint[] codepointsArray = toSave.toArray(new Codepoint[toSave.size()]);
-					LoadedDict.getInstance().addEntry(new EmojiEntry(phrasesArray, codepointsArray));
-					recyclerView.getAdapter().notifyDataSetChanged();
-					recyclerView.scrollToPosition(recyclerView.getAdapter().getItemCount() - 1);
-					return true;
+					if(LoadedDict.getInstance().addEntry(new EmojiEntry(phrasesArray, codepointsArray))) {
+						Toast.makeText(getContext(), getContext().getString(R.string.entry_added), Toast.LENGTH_SHORT).show();
+						recyclerView.getAdapter().notifyDataSetChanged();
+						recyclerView.scrollToPosition(recyclerView.getAdapter().getItemCount() - 1);
+					} else {
+						Toast.makeText(getContext(), getContext().getString(R.string.you_already_have_an_entry), Toast.LENGTH_SHORT).show();
+					}
 				}
 			}
 
 			@Override
-			public void onCancelled() {
+			public void onGone() {
 			}
-		}, getString(R.string.add_emoji), null, getString(R.string.separate_with_commas), getString(R.string.next), false).show();
+		});
+		df.show(getChildFragmentManager(), "add_emoji");
 	}
 
 	public void setAdapter() {
-		recyclerView.setAdapter(new DictionaryAdapter(getContext(), LoadedDict.getInstance().exposeEntries()));
+		recyclerView.setAdapter(new DictionaryAdapter(this, LoadedDict.getInstance().exposeEntries()));
 	}
 
 	public void onQueryTextSubmit(String query) { //Pick the top element of the adapter

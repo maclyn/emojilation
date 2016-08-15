@@ -11,6 +11,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -131,18 +132,19 @@ public class Utilities {
 			boolean canOnlyMakeUtf8 = (i == block.length() - 1 || !Character.isSurrogatePair(block.charAt(i), block.charAt(i+1)));
 			int utf8Codepoint = block.charAt(i); //Needed for some symbols, unfortunately
 			if(canOnlyMakeUtf8){
-				if (utf8Codepoint >= MIN_SYMBOL_CODEPOINT && utf8Codepoint <= MAX_SYMBOL_CODEPOINT) {
-					emoji.add(new String(Character.toChars(utf8Codepoint)));
-				}
+				emoji.add(new String(Character.toChars(utf8Codepoint)));
 			} else {
 				int utf16Codepoint = Character.toCodePoint(block.charAt(i), block.charAt(i+1));
-				if(utf16Codepoint >= MIN_EMOJI_CODEPOINT && utf16Codepoint <= MAX_EMOJI_CODEPOINT){
-					emoji.add(new String(Character.toChars(utf16Codepoint)));
-					i++; //So we'll be (2) ahead the next ti
-				}
+				emoji.add(new String(Character.toChars(utf16Codepoint)));
+				i++; //So we'll be (2) ahead the next time
 			}
 		}
 		return emoji;
+	}
+
+	public static void showKeyboard(Context context) {
+		InputMethodManager inputMananger = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
+		inputMananger.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
 	}
 
 	public interface EditTextDialogInterface {

@@ -129,7 +129,7 @@ public class LoadedDict {
 		mIsDictDirty = true;
 	}
 
-	public void addEntry(EmojiEntry entry){
+	public boolean addEntry(EmojiEntry entry){
 		for(String s : entry.getPhrases()){
 			int length = getLengthOfPhrase(s);
 			TreeMap<String, Codepoint[]> mapForLength = mMaps.get(length);
@@ -138,10 +138,22 @@ public class LoadedDict {
 				mMaps.put(length, mapForLength);
 				if(length > longestPhrase) longestPhrase = length;
 			}
+
+			if (mapForLength.containsKey(s)){ //We'd be overwriting something -- this isn't new! Ahhh!
+				return false;
+			}
+		}
+
+		//Safe to commit; do so
+		for(String s : entry.getPhrases()){
+			int length = getLengthOfPhrase(s);
+			TreeMap<String, Codepoint[]> mapForLength = mMaps.get(length);
 			mapForLength.put(s, entry.getCodepoints());
 		}
 		mDict.getEmoji().add(entry);
 		mIsDictDirty = true;
+
+		return true;
 	}
 
 	private void sortDictionary() {

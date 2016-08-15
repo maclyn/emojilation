@@ -2,6 +2,7 @@ package com.inipage.translatetoemoji;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.RecyclerView;
@@ -14,6 +15,7 @@ import android.widget.Toast;
 
 import com.inipage.translatetoemoji.model.Codepoint;
 import com.inipage.translatetoemoji.model.EmojiEntry;
+import com.inipage.translatetoemoji.utils.RemovableItemDialogFragment;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -24,11 +26,13 @@ public class DictionaryAdapter extends RecyclerView.Adapter<DictionaryAdapterVie
 
 	List<EmojiEntry> mData;
 	Context mContext;
+	Fragment mFragment;
 
-	public DictionaryAdapter(Context context, List<EmojiEntry> data) {
+	public DictionaryAdapter(Fragment mFragment, List<EmojiEntry> data) {
 		super();
 		this.mData = data;
-		this.mContext = context;
+		this.mContext = mFragment.getContext();
+		this.mFragment = mFragment;
 	}
 
 	@Override
@@ -52,8 +56,10 @@ public class DictionaryAdapter extends RecyclerView.Adapter<DictionaryAdapterVie
 
 		//Set emoji
 		String emojiText = "";
-		for(Codepoint point : entry.getCodepoints()) {
-			emojiText += Utilities.convertDisplayFormatEmojisToString(point.getCode());
+		Codepoint[] codepoints = entry.getCodepoints();
+		for(int i = 0; i < codepoints.length; i++) {
+			emojiText += Utilities.convertDisplayFormatEmojisToString(codepoints[i].getCode());
+			if(i != codepoints.length - 1) emojiText += ", ";
 		}
 		holder.entryEmojiTv.setText(emojiText);
 
@@ -105,82 +111,70 @@ public class DictionaryAdapter extends RecyclerView.Adapter<DictionaryAdapterVie
 	}
 
 	private void displayEditPhrasesDialog(final int index){
-		String prefilled = "";
-		for(int i = 0; i < mData.get(index).getPhrases().length; i++){
-			String phrase = mData.get(index).getPhrases()[i];
-			prefilled += phrase;
-			if(i != mData.get(index).getPhrases().length - 1) prefilled += ", ";
+		ArrayList<String> phrases = new ArrayList<>();
+		for(String s : mData.get(index).getPhrases()){
+			phrases.add(s);
 		}
-
-		Utilities.createEditTextAlertDialog(
-				mContext,
-				new Utilities.EditTextDialogInterface() {
-					@Override
-					public boolean onDone(String text) {
-						List<String> toSave = new ArrayList<>();
-						for(String s : text.split(",")){
-							toSave.add(s.trim());
-						}
-						if(toSave.isEmpty()) {
-							Toast.makeText(mContext, mContext.getString(R.string.must_enter_one_phrase), Toast.LENGTH_SHORT).show();
-							return false;
-						} else {
-							LoadedDict.getInstance().modifyEntryPhrases(mData.get(index), toSave);
-							notifyItemChanged(index);
-							return true;
-						}
-					}
-
-					@Override
-					public void onCancelled() {
-					}
-				},
+		RemovableItemDialogFragment df = RemovableItemDialogFragment.getInstance(
+				phrases,
 				mContext.getString(R.string.edit_phrases),
-				prefilled,
-				mContext.getString(R.string.enter_phrases_separated_by),
 				mContext.getString(R.string.save),
-				false).show();
+				true);
+		df.setListener(new RemovableItemDialogFragment.RemovableItemDialogStateListener() {
+			@Override
+			public void onNext(List<String> toSave) {
+				if(toSave.isEmpty()) {
+					Toast.makeText(mContext, mContext.getString(R.string.must_enter_one_phrase), Toast.LENGTH_SHORT).show();
+				} else {
+					//TODO: Add more careful shielding to avoid duplicates
+					LoadedDict.getInstance().modifyEntryPhrases(mData.get(index), toSave);
+					notifyItemChanged(index);
+				}
+			}
+
+			@Override
+			public void onGone() {
+			}
+		});
+		df.show(mFragment.getChildFragmentManager(), "edit_phrases");
 	}
 
 	private void displayEditEmojiDialog(final int index){
-		String prefilled = "";
-		for(int i = 0; i < mData.get(index).getCodepoints().length; i++){
-			Codepoint point = mData.get(index).getCodepoints()[i];
-			prefilled += Utilities.convertDisplayFormatEmojisToString(point.getCode());
-			if(i != mData.get(index).getCodepoints().length - 1) prefilled += ", ";
+		ArrayList<String> emoji = new ArrayList<>();
+		for(Codepoint cp : mData.get(index).getCodepoints()){
+			emoji.add(Utilities.convertDisplayFormatEmojisToString(cp.getCode()));
 		}
-
-		Utilities.createEditTextAlertDialog(
-			mContext,
-			new Utilities.EditTextDialogInterface() {
-				@Override
-				public boolean onDone(String text) {
-					List<Codepoint> toSave = new ArrayList<>();
-					for(String s : text.split(",")) {
-						List<String> emojis = Utilities.createEmojiBlockFromString(s.trim());
-						for(String emoji : emojis){
-							toSave.add(new Codepoint(Utilities.getDisplayFormatForEmoji(emoji), false));
-						}
+		RemovableItemDialogFragment df = RemovableItemDialogFragment.getInstance(
+				emoji,
+				mContext.getString(R.string.edit_emoji),
+				mContext.getString(R.string.save),
+				true);
+		df.setListener(new RemovableItemDialogFragment.RemovableItemDialogStateListener() {
+			@Override
+			public void onNext(List<String> entries) {
+				List<Codepoint> toSave = new ArrayList<>();
+				for(String s : entries) {
+					List<String> emojis = Utilities.createEmojiBlockFromString(s);
+					String saveFormat = "";
+					for(int i = 0; i < emojis.size(); i++){
+						saveFormat += Utilities.getDisplayFormatForEmoji(emojis.get(i));
+						if(i != emojis.size() - 1) saveFormat += " ";
 					}
-					if(toSave.isEmpty()) {
-						Toast.makeText(mContext, mContext.getString(R.string.must_one_emoji), Toast.LENGTH_SHORT).show();
-						return false;
-					} else {
-						LoadedDict.getInstance().modifyEntryEmojis(mData.get(index), toSave);
-						notifyItemChanged(index);
-						return true;
-					}
+					toSave.add(new Codepoint(saveFormat, false));
 				}
+				if(toSave.isEmpty()) {
+					Toast.makeText(mContext, mContext.getString(R.string.must_one_emoji), Toast.LENGTH_SHORT).show();
+				} else {
+					LoadedDict.getInstance().modifyEntryEmojis(mData.get(index), toSave);
+					notifyItemChanged(index);
+				}
+			}
 
-				@Override
-				public void onCancelled() {
-				}
-			},
-			mContext.getString(R.string.edit_emoji),
-			prefilled,
-			mContext.getString(R.string.enter_enter_separated_by),
-			mContext.getString(R.string.save),
-			false).show();
+			@Override
+			public void onGone() {
+			}
+		});
+		df.show(mFragment.getChildFragmentManager(), "edit_emoji");
 	}
 
 	private void deleteEntry(final int index){
