@@ -20,4 +20,9 @@
 		android:id="@+id/load_emoji"
 		android:orderInCategory="3"
 		android:title="@string/load_dictionary" />
+
+	<item
+		android:id="@+id/dict_info"
+		android:orderInCategory="3"
+		android:title="@string/dictionary_info" />
 </menu>

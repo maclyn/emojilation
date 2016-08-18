@@ -7,4 +7,5 @@
 	<dimen name="emoji_row_depth">60dp</dimen>
 	<dimen name="emoji_box_width">4dp</dimen>
 	<dimen name="emoji_view_horizontal_padding">8dp</dimen>
+	<dimen name="chevron_height">36dp</dimen>
 </resources>

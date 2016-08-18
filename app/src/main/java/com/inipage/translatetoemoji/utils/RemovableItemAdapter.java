@@ -73,9 +73,9 @@ public class RemovableItemAdapter extends RecyclerView.Adapter<RemovableItemAdap
 		int viewType = getItemViewType(position);
 
 		if(viewType == VIEW_TYPE_ADD) {
-			holder.addGuard.setVisibility(View.VISIBLE);
+			holder.addGuard.setVisibility(mEntries.isEmpty() ? View.INVISIBLE : View.VISIBLE);
 			holder.addText.setText("");
-			holder.addView.setVisibility(View.INVISIBLE);
+			holder.addView.setVisibility(mEntries.isEmpty() ? View.VISIBLE : View.INVISIBLE);
 			holder.addGuard.setOnClickListener(new View.OnClickListener() {
 				@Override
 				public void onClick(View v) {

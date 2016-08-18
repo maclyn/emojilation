@@ -1,9 +1,11 @@
 package com.inipage.translatetoemoji;
 
 import android.Manifest;
+import android.annotation.TargetApi;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Environment;
 import android.support.annotation.NonNull;
 import android.support.design.widget.TabLayout;
@@ -21,6 +23,7 @@ import android.support.v7.widget.AppCompatTextView;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -29,10 +32,13 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.inipage.translatetoemoji.model.Codepoint;
 import com.inipage.translatetoemoji.model.EmojiDictionary;
+import com.inipage.translatetoemoji.model.EmojiEntry;
 import com.inipage.translatetoemoji.workingmodel.RootText;
 
 import java.io.File;
@@ -123,6 +129,12 @@ public class EmojiTranslateActivity extends AppCompatActivity implements Fragmen
 				initialText = textReadOnly.toString();
 				isReadOnly = true;
 			}
+
+			if(initialText != null){
+				initialText = initialText.replace("\r\n", " ");
+				initialText = initialText.replace("\n", " ");
+				initialText = initialText.replace("\r", " ");
+			}
 		}
 
 		setSupportActionBar(toolbar);
@@ -171,8 +183,8 @@ public class EmojiTranslateActivity extends AppCompatActivity implements Fragmen
 				if(s.isEmpty()){ //Initial state!
 					SearchView.SearchAutoComplete mSearchSrcTextView = (SearchView.SearchAutoComplete) findViewById(android.support.v7.appcompat.R.id.search_src_text);
 					if(mSearchSrcTextView != null){
-						mSearchSrcTextView.setTextColor(getColor(R.color.white));
-						mSearchSrcTextView.setHintTextColor(getColor(R.color.ligher_white));
+						mSearchSrcTextView.setTextColor(getResources().getColor(R.color.white));
+						mSearchSrcTextView.setHintTextColor(getResources().getColor(R.color.ligher_white));
 						mSearchSrcTextView.setHint(R.string.search_for_phrases);
 					}
 				}
@@ -204,6 +216,7 @@ public class EmojiTranslateActivity extends AppCompatActivity implements Fragmen
 		actionMenuItem.collapseActionView();
 	}
 
+	@TargetApi(Build.VERSION_CODES.M)
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
@@ -214,13 +227,43 @@ public class EmojiTranslateActivity extends AppCompatActivity implements Fragmen
 					saveDictionary();
 				}
 				break;
+			case R.id.dict_info:
+				showDictionaryInfo();
+				break;
 			case R.id.load_emoji:
 				if (!Utilities.canReadExternalStorage(this)) {
 					requestPermissions(new String[] {Manifest.permission.WRITE_EXTERNAL_STORAGE}, READ_DICTIONARY_REQUEST_CODE);
 				} else {
 					loadDictionary();
 				}
+
+				/*
+				//Dumps emoji
+				String dump = "";
+				//Set emoji
+				for(EmojiEntry entry : LoadedDict.getInstance().exposeEntries()) {
+					String emojiText = entry.getPhrases()[0] + ": ";
+					Codepoint[] codepoints = entry.getCodepoints();
+					for (int i = 0; i < codepoints.length; i++) {
+						emojiText += Utilities.convertDisplayFormatEmojisToString(codepoints[i].getCode());
+						if (i != codepoints.length - 1) emojiText += ", ";
+					}
+					emojiText += "\n";
+					dump += emojiText;
+				}
+
+				ScrollView scrollView = new ScrollView(this);
+				TextView tv = new TextView(this);
+				tv.setText(dump);
+				tv.setPadding(50, 50, 50, 50);
+				tv.setTextSize(22);
+				scrollView.addView(tv);
+				new AlertDialog.Builder(this)
+						.setTitle("Emoji Dump")
+						.setView(scrollView)
+						.show();
 				break;
+				*/
 			case R.id.search_emoji:
 				break;
 		}
@@ -250,6 +293,18 @@ public class EmojiTranslateActivity extends AppCompatActivity implements Fragmen
 		}
 	}
 
+	private void showDictionaryInfo(){
+		new AlertDialog.Builder(this)
+				.setTitle(R.string.dictionary_info)
+				.setMessage(getString(R.string.dict_info_block,
+						LoadedDict.getInstance().getFilename(),
+						LoadedDict.getInstance().getAuthor(),
+						LoadedDict.getInstance().getLanguage(),
+						LoadedDict.getInstance().getLocale()))
+				.setPositiveButton(R.string.done, null)
+				.show();
+	}
+
 	private void loadDictionary() {
 		File dictionaryPath = new File(Environment.getExternalStorageDirectory() + "/" + Constants.EXTERNAL_STORAGE_PATH);
 		dictionaryPath.mkdirs();
@@ -264,6 +319,7 @@ public class EmojiTranslateActivity extends AppCompatActivity implements Fragmen
 				files.add(f.getName());
 			}
 		}
+		files.add("Default Dictionary (English)");
 		ArrayAdapter<String> fileAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, files);
 
 		new AlertDialog.Builder(this)
@@ -272,15 +328,27 @@ public class EmojiTranslateActivity extends AppCompatActivity implements Fragmen
 				.setAdapter(fileAdapter, new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
-						String filename = Environment.getExternalStorageDirectory() + "/" + Constants.EXTERNAL_STORAGE_PATH + "/" + files.get(which);
-						EmojiDictionary dict = Utilities.loadDictionaryFromExternalStorage(filename);
-						if(dict != null) {
-							LoadedDict.getInstance().setDictionary(filename, dict);
-							EditFragment edit = (EditFragment) ((FragmentPagerAdapter) pager.getAdapter()).getItem(1);
-							edit.setAdapter();
-							Toast.makeText(EmojiTranslateActivity.this, R.string.dictionary_loaded, Toast.LENGTH_SHORT).show();
+						if(which != files.size() - 1) {
+							String filename = Environment.getExternalStorageDirectory() + "/" + Constants.EXTERNAL_STORAGE_PATH + "/" + files.get(which);
+							EmojiDictionary dict = Utilities.loadDictionaryFromExternalStorage(filename);
+							if (dict != null) {
+								LoadedDict.getInstance().setDictionary(filename, dict);
+								EditFragment edit = (EditFragment) ((FragmentPagerAdapter) pager.getAdapter()).getItem(1);
+								edit.setAdapter();
+								Toast.makeText(EmojiTranslateActivity.this, R.string.dictionary_loaded, Toast.LENGTH_SHORT).show();
+							} else {
+								Toast.makeText(EmojiTranslateActivity.this, R.string.unable_to_load, Toast.LENGTH_SHORT).show();
+							}
 						} else {
-							Toast.makeText(EmojiTranslateActivity.this, R.string.unable_to_load, Toast.LENGTH_SHORT).show();
+							EmojiDictionary dict = Utilities.loadDictionaryFromAssets(getAssets(), Constants.DEFAULT_DICT);
+							if (dict != null) {
+								LoadedDict.getInstance().setDictionary(Constants.DEFAULT_DICT, dict);
+								EditFragment edit = (EditFragment) ((FragmentPagerAdapter) pager.getAdapter()).getItem(1);
+								edit.setAdapter();
+								Toast.makeText(EmojiTranslateActivity.this, R.string.dictionary_loaded, Toast.LENGTH_SHORT).show();
+							} else {
+								Toast.makeText(EmojiTranslateActivity.this, R.string.unable_to_load, Toast.LENGTH_SHORT).show();
+							}
 						}
 					}
 				})

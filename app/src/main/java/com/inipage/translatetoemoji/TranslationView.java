@@ -7,6 +7,7 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.Typeface;
+import android.graphics.drawable.Drawable;
 import android.text.TextPaint;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -24,13 +25,14 @@ public class TranslationView extends View {
 	public static final String TAG = "TranslationView";
 
 	private float ROW_HEIGHT = getResources().getDimension(R.dimen.emoji_row_depth);
+	private float CHEVRON_HEIGHT = getResources().getDimension(R.dimen.chevron_height);
+	private float CHEVRON_WIDTH = getResources().getDimension(R.dimen.chevron_height);
 	private float FONT_SIZE = getResources().getDimension(R.dimen.monospaced_text_block);
 	private float BOX_THICKNESS = getResources().getDimension(R.dimen.emoji_box_width);
 	private float HORIZONTAL_PADDING = getResources().getDimension(R.dimen.emoji_view_horizontal_padding);
 
 	//Fixed dimensions
 	private int RECTANGLE_STROKE_COLOR = getResources().getColor(R.color.rectangle_stroke);
-	private int RECTANGLE_OPTIONS_STROKE_COLOR = getResources().getColor(R.color.rectangle_stroke_options);
 	private int RECTANGLE_SELECTED_FILL_COLOR = getResources().getColor(R.color.rectangle_selected_fill);
 
 	//Dimensions calculated at runtime
@@ -44,6 +46,7 @@ public class TranslationView extends View {
 	private float bottomBoxPadding;
 	private float rightBoxPadding;
 
+	private Drawable chevronRightDrawable;
 	private Paint rectanglePaint;
 	private TextPaint characterPaint;
 	private TextPaint emojiPaint;
@@ -80,6 +83,8 @@ public class TranslationView extends View {
 		emojiPaint.setTextAlign(Paint.Align.LEFT);
 
 		scrapPaint = new TextPaint();
+
+		chevronRightDrawable = getResources().getDrawable(R.drawable.ic_chevron_right_black_24dp);
 	}
 
 	public void setup(String backingText, List<List<TranslationChunk>> translations){
@@ -199,11 +204,7 @@ public class TranslationView extends View {
 					canvas.drawRect(tempRectF, rectanglePaint);
 				}
 
-				if(chunk.getOptions().length == 1) {
-					rectanglePaint.setColor(RECTANGLE_STROKE_COLOR);
-				} else {
-					rectanglePaint.setColor(RECTANGLE_OPTIONS_STROKE_COLOR);
-				}
+				rectanglePaint.setColor(RECTANGLE_STROKE_COLOR);
 				rectanglePaint.setStyle(Paint.Style.STROKE);
 				canvas.drawRect(tempRectF, rectanglePaint);
 
@@ -226,6 +227,14 @@ public class TranslationView extends View {
 						startX,
 						startY,
 						emojiPaint);
+
+				//(2.3) Draw "more" arrow for this if needed
+				if(chunk.getOptions().length > 1){
+					int top = (int) (tempRectF.top + (tempRectF.height() / 2) - (CHEVRON_HEIGHT / 2));
+					int left = (int) (tempRectF.right - CHEVRON_WIDTH + (BOX_THICKNESS * 1.5));
+					chevronRightDrawable.setBounds(left, top, (int) (left + CHEVRON_WIDTH), (int) (top + CHEVRON_HEIGHT));
+					chevronRightDrawable.draw(canvas);
+				}
 			}
 
 			yOffset += (ROW_HEIGHT + BOX_THICKNESS);

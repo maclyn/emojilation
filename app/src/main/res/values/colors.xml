@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimary">#4CAF50</color>
+    <color name="colorPrimaryDark">#388E3C</color>
+    <color name="colorPrimaryLight">#C8E6C9</color>
+    <color name="colorAccent">#03A9F4</color>
+    <color name="colorAccentLight">#4025CAFF</color>
+    <color name="dividerColor">#BDBDBD</color>
     <color name="white">#ffffff</color>
-    <color name="rectangle_stroke">#000000</color>
-    <color name="rectangle_selected_fill">#6000ff00</color>
-    <color name="textColorPrimary">#101010</color>
-    <color name="textColorSecondary">#303030</color>
+    <color name="rectangle_stroke">@color/black</color>
+    <color name="rectangle_selected_fill">@color/colorAccentLight</color>
+    <color name="textColorPrimary">#212121</color>
+    <color name="textColorSecondary">#757575</color>
     <color name="black">#000000</color>
     <color name="ligher_white">#a0ffffff</color>
     <color name="rectangle_stroke_options">#0000ff</color>

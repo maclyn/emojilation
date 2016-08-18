@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.RecyclerView;
+import android.util.Pair;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -38,7 +39,7 @@ public class DictionaryAdapter extends RecyclerView.Adapter<DictionaryAdapterVie
 	@Override
 	public DictionaryAdapterViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 		LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-		switch(viewType){
+		switch (viewType) {
 			case VIEW_TYPE_ENTRY:
 				return new DictionaryAdapterViewHolder(inflater.inflate(R.layout.view_dictionary_card, parent, false));
 			default:
@@ -57,17 +58,17 @@ public class DictionaryAdapter extends RecyclerView.Adapter<DictionaryAdapterVie
 		//Set emoji
 		String emojiText = "";
 		Codepoint[] codepoints = entry.getCodepoints();
-		for(int i = 0; i < codepoints.length; i++) {
+		for (int i = 0; i < codepoints.length; i++) {
 			emojiText += Utilities.convertDisplayFormatEmojisToString(codepoints[i].getCode());
-			if(i != codepoints.length - 1) emojiText += ", ";
+			if (i != codepoints.length - 1) emojiText += ", ";
 		}
 		holder.entryEmojiTv.setText(emojiText);
 
 		//Set phrases
 		String phraseText = "";
-		for(int i = 0; i < entry.getPhrases().length; i++){
+		for (int i = 0; i < entry.getPhrases().length; i++) {
 			phraseText += entry.getPhrases()[i];
-			if(i != entry.getPhrases().length - 1) phraseText += ", ";
+			if (i != entry.getPhrases().length - 1) phraseText += ", ";
 		}
 		holder.entryPhrasesTv.setText(phraseText);
 
@@ -81,7 +82,7 @@ public class DictionaryAdapter extends RecyclerView.Adapter<DictionaryAdapterVie
 					@Override
 					public boolean onMenuItemClick(MenuItem item) {
 						int index = LoadedDict.getInstance().exposeEntries().indexOf(entry);
-						switch(item.getItemId()){
+						switch (item.getItemId()) {
 							case R.id.edit_phrases:
 								displayEditPhrasesDialog(index);
 								return true;
@@ -110,9 +111,9 @@ public class DictionaryAdapter extends RecyclerView.Adapter<DictionaryAdapterVie
 		return VIEW_TYPE_ENTRY;
 	}
 
-	private void displayEditPhrasesDialog(final int index){
+	private void displayEditPhrasesDialog(final int index) {
 		ArrayList<String> phrases = new ArrayList<>();
-		for(String s : mData.get(index).getPhrases()){
+		for (String s : mData.get(index).getPhrases()) {
 			phrases.add(s);
 		}
 		RemovableItemDialogFragment df = RemovableItemDialogFragment.getInstance(
@@ -123,12 +124,18 @@ public class DictionaryAdapter extends RecyclerView.Adapter<DictionaryAdapterVie
 		df.setListener(new RemovableItemDialogFragment.RemovableItemDialogStateListener() {
 			@Override
 			public void onNext(List<String> toSave) {
-				if(toSave.isEmpty()) {
+				if (toSave.isEmpty()) {
 					Toast.makeText(mContext, mContext.getString(R.string.must_enter_one_phrase), Toast.LENGTH_SHORT).show();
 				} else {
-					//TODO: Add more careful shielding to avoid duplicates
-					LoadedDict.getInstance().modifyEntryPhrases(mData.get(index), toSave);
-					notifyItemChanged(index);
+					Pair<String, Integer> res = LoadedDict.getInstance().modifyEntryPhrases(mData.get(index), toSave);
+					if (res == null) {
+						notifyItemChanged(index);
+					} else {
+						Toast.makeText(mContext, mContext.getString(R.string.phrase_used_here, res.first), Toast.LENGTH_SHORT).show();
+						if (mFragment instanceof ScrollableFragment) {
+							((ScrollableFragment) mFragment).scrollTo(res.second);
+						}
+					}
 				}
 			}
 
@@ -139,9 +146,9 @@ public class DictionaryAdapter extends RecyclerView.Adapter<DictionaryAdapterVie
 		df.show(mFragment.getChildFragmentManager(), "edit_phrases");
 	}
 
-	private void displayEditEmojiDialog(final int index){
+	private void displayEditEmojiDialog(final int index) {
 		ArrayList<String> emoji = new ArrayList<>();
-		for(Codepoint cp : mData.get(index).getCodepoints()){
+		for (Codepoint cp : mData.get(index).getCodepoints()) {
 			emoji.add(Utilities.convertDisplayFormatEmojisToString(cp.getCode()));
 		}
 		RemovableItemDialogFragment df = RemovableItemDialogFragment.getInstance(
@@ -153,16 +160,16 @@ public class DictionaryAdapter extends RecyclerView.Adapter<DictionaryAdapterVie
 			@Override
 			public void onNext(List<String> entries) {
 				List<Codepoint> toSave = new ArrayList<>();
-				for(String s : entries) {
+				for (String s : entries) {
 					List<String> emojis = Utilities.createEmojiBlockFromString(s);
 					String saveFormat = "";
-					for(int i = 0; i < emojis.size(); i++){
+					for (int i = 0; i < emojis.size(); i++) {
 						saveFormat += Utilities.getDisplayFormatForEmoji(emojis.get(i));
-						if(i != emojis.size() - 1) saveFormat += " ";
+						if (i != emojis.size() - 1) saveFormat += " ";
 					}
 					toSave.add(new Codepoint(saveFormat, false));
 				}
-				if(toSave.isEmpty()) {
+				if (toSave.isEmpty()) {
 					Toast.makeText(mContext, mContext.getString(R.string.must_one_emoji), Toast.LENGTH_SHORT).show();
 				} else {
 					LoadedDict.getInstance().modifyEntryEmojis(mData.get(index), toSave);
@@ -177,7 +184,7 @@ public class DictionaryAdapter extends RecyclerView.Adapter<DictionaryAdapterVie
 		df.show(mFragment.getChildFragmentManager(), "edit_emoji");
 	}
 
-	private void deleteEntry(final int index){
+	private void deleteEntry(final int index) {
 		new AlertDialog.Builder(mContext)
 				.setTitle(R.string.delete_entry)
 				.setMessage(R.string.are_you_sure_you_wish_to_delete)

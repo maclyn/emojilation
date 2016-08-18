@@ -1,6 +1,8 @@
 package com.inipage.translatetoemoji;
 
 import android.Manifest;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
@@ -9,8 +11,10 @@ import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.animation.BounceInterpolator;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -147,6 +151,11 @@ public class Utilities {
 		inputMananger.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
 	}
 
+	public static void hideKeyboard(Context context) {
+		InputMethodManager inputMananger = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
+		inputMananger.toggleSoftInput(InputMethodManager.HIDE_NOT_ALWAYS, 0);
+	}
+
 	public interface EditTextDialogInterface {
 		boolean onDone(String text);
 		void onCancelled();
@@ -189,5 +198,19 @@ public class Utilities {
 						dialogInterface.onCancelled();
 					}
 				}).create();
+	}
+
+	public static void wiggle(View view){
+		view.setPivotX(view.getWidth() / 2);
+		view.setPivotY(view.getHeight() / 2);
+
+		ObjectAnimator wiggle = ObjectAnimator.ofFloat(view, "rotation", -10F).setDuration(250);
+		ObjectAnimator wobble = ObjectAnimator.ofFloat(view, "rotation", 10F).setDuration(250);
+		ObjectAnimator lame = ObjectAnimator.ofFloat(view, "rotation", 0F).setDuration(250);
+
+		AnimatorSet theThing = new AnimatorSet();
+		theThing.setInterpolator(new BounceInterpolator());
+		theThing.playSequentially(wiggle, wobble, lame);
+		theThing.start();
 	}
 }

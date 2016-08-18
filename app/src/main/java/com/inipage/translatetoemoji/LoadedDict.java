@@ -16,6 +16,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -108,8 +109,23 @@ public class LoadedDict {
 		mIsDictDirty = true;
 	}
 
-	public void modifyEntryPhrases(EmojiEntry entry, List<String> newPhrases){
+	public Pair<String, Integer> modifyEntryPhrases(EmojiEntry entry, List<String> newPhrases){
 		String[] result = newPhrases.toArray(new String[newPhrases.size()]);
+
+		//Perform a preliminary search to confirm that we aren't creating duplicates
+		for(int i = 0; i < LoadedDict.getInstance().exposeEntries().size(); i++){
+			EmojiEntry existingEntry = LoadedDict.getInstance().exposeEntries().get(i);
+			if(existingEntry.equals(entry)) continue;
+
+			for (String newPhrase : newPhrases) {
+				for(String oldPhrase : existingEntry.getPhrases()){
+					if(newPhrase.toLowerCase(Locale.getDefault()).equals(oldPhrase.toLowerCase(Locale.getDefault()))){
+						return new Pair<>(oldPhrase, LoadedDict.getInstance().exposeEntries().indexOf(existingEntry));
+					}
+				}
+			}
+		}
+
 		for(String s : entry.getPhrases()){
 			int length = getLengthOfPhrase(s);
 			TreeMap<String, Codepoint[]> mapForLength = mMaps.get(length);
@@ -127,9 +143,11 @@ public class LoadedDict {
 		}
 		entry.setPhrases(result);
 		mIsDictDirty = true;
+
+		return null;
 	}
 
-	public boolean addEntry(EmojiEntry entry){
+	public String addEntry(EmojiEntry entry){
 		for(String s : entry.getPhrases()){
 			int length = getLengthOfPhrase(s);
 			TreeMap<String, Codepoint[]> mapForLength = mMaps.get(length);
@@ -140,7 +158,7 @@ public class LoadedDict {
 			}
 
 			if (mapForLength.containsKey(s)){ //We'd be overwriting something -- this isn't new! Ahhh!
-				return false;
+				return s;
 			}
 		}
 
@@ -153,7 +171,7 @@ public class LoadedDict {
 		mDict.getEmoji().add(entry);
 		mIsDictDirty = true;
 
-		return true;
+		return null;
 	}
 
 	private void sortDictionary() {
@@ -222,5 +240,17 @@ public class LoadedDict {
 			return false;
 		}
 		return true;
+	}
+
+	public String getAuthor() {
+		return mDict.getAuthor();
+	}
+
+	public String getLanguage(){
+		return mDict.getLanguage();
+	}
+
+	public String getLocale() {
+		return mDict.getLocale();
 	}
 }

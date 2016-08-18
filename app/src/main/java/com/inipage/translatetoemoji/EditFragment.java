@@ -1,5 +1,7 @@
 package com.inipage.translatetoemoji;
 
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.ClipData;
@@ -9,6 +11,8 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.DialogFragment;
@@ -16,6 +20,7 @@ import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Pair;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -37,8 +42,9 @@ import com.inipage.translatetoemoji.workingmodel.TranslationChunk;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Locale;
 
-public class EditFragment extends Fragment {
+public class EditFragment extends Fragment implements ScrollableFragment {
 	RecyclerView recyclerView;
 	RecyclerView suggestionsView;
 	FloatingActionButton addPhrase;
@@ -137,12 +143,29 @@ public class EditFragment extends Fragment {
 					//Convert lists to arrays
 					String[] phrasesArray = phrases.toArray(new String[phrases.size()]);
 					Codepoint[] codepointsArray = toSave.toArray(new Codepoint[toSave.size()]);
-					if(LoadedDict.getInstance().addEntry(new EmojiEntry(phrasesArray, codepointsArray))) {
+					String existingEntry = LoadedDict.getInstance().addEntry(new EmojiEntry(phrasesArray, codepointsArray));
+					if(existingEntry == null) {
 						Toast.makeText(getContext(), getContext().getString(R.string.entry_added), Toast.LENGTH_SHORT).show();
 						recyclerView.getAdapter().notifyDataSetChanged();
-						recyclerView.scrollToPosition(recyclerView.getAdapter().getItemCount() - 1);
+
+						scrollTo(recyclerView.getAdapter().getItemCount() - 1);
 					} else {
-						Toast.makeText(getContext(), getContext().getString(R.string.you_already_have_an_entry), Toast.LENGTH_SHORT).show();
+						Toast.makeText(getContext(), getContext().getString(R.string.you_already_have_an_entry, existingEntry), Toast.LENGTH_SHORT).show();
+
+						int location = -1;
+						for(int i = 0; i < LoadedDict.getInstance().exposeEntries().size(); i++){
+							EmojiEntry entry = LoadedDict.getInstance().exposeEntries().get(i);
+							phraseSearch: {
+								for (String phrase : entry.getPhrases()) {
+									if (phrase.equals(existingEntry)) {
+										location = i;
+										break phraseSearch;
+									}
+								}
+							}
+						}
+
+						if(location != -1) scrollTo(location);
 					}
 				}
 			}
@@ -184,5 +207,23 @@ public class EditFragment extends Fragment {
 				}
 			}));
 		}
+	}
+
+	@Override
+	public void scrollTo(final int position) {
+		recyclerView.scrollToPosition(position);
+		RecyclerView.ViewHolder holder = recyclerView.findViewHolderForAdapterPosition(position);
+
+		//When we scroll to a new item/something far away, there's a decent chance we won't have a ViewHolder yet,
+		//so we wait before we try to run the wiggle animation on it
+		if(holder != null) Utilities.wiggle(holder.itemView);
+		else
+			new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+				@Override
+				public void run() {
+					RecyclerView.ViewHolder holder = recyclerView.findViewHolderForAdapterPosition(position);
+					if(holder != null) Utilities.wiggle(holder.itemView);
+				}
+			}, 200);
 	}
 }

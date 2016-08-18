@@ -41,7 +41,7 @@ public class SuggestionsAdapter extends RecyclerView.Adapter<SuggestionsAdapter.
 			EmojiEntry entry = LoadedDict.getInstance().exposeEntries().get(i);
 			phraseSearch: {
 				for (String phrase : entry.getPhrases()) {
-					if (phrase.toLowerCase(Locale.getDefault()).contains(query)) {
+					if (phrase.toLowerCase(Locale.getDefault()).contains(query.toLowerCase(Locale.getDefault()))) {
 						entries.add(new Pair<>(i, entry));
 						break phraseSearch;
 					}

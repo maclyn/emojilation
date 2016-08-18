@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.util.TypedValue;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -80,6 +81,16 @@ public class TranslateFragment extends Fragment {
 			@Override
 			public void onClick(View v) {
 				translate();
+			}
+		});
+		input.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+			@Override
+			public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+				if(actionId == R.id.translate_entry || (event != null && event.getKeyCode() == KeyEvent.KEYCODE_ENTER)) {
+					translate();
+					return true;
+				}
+				return false;
 			}
 		});
 		copyMessage.setOnClickListener(new View.OnClickListener() {
