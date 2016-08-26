@@ -63,4 +63,5 @@
     <string name="phrase_used_here">Oops! The phrase `%s` is already used here.</string>
     <string name="dictionary_info">Dictionary Info</string>
     <string name="dict_info_block">Filename: %1$s\nAuthor: %2$s\nLanguage/Locale: %3$s/%4$s</string>
+    <string name="already_have_one">This entry already appears above.</string>
 </resources>

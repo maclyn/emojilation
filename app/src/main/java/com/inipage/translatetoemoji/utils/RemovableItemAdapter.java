@@ -13,18 +13,19 @@ import android.view.animation.Animation;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.inipage.translatetoemoji.R;
 import com.inipage.translatetoemoji.Utilities;
 
 import java.util.List;
+import java.util.Locale;
 
 public class RemovableItemAdapter extends RecyclerView.Adapter<RemovableItemAdapter.RemovableItemHolder> {
 	public class RemovableItemHolder extends RecyclerView.ViewHolder {
 		View itemView;
 
 		//Add entries
-		View addGuard;
 		View addView;
 		EditText addText;
 		Button addButton;
@@ -32,19 +33,20 @@ public class RemovableItemAdapter extends RecyclerView.Adapter<RemovableItemAdap
 		//Standard entries
 		TextView contentView;
 		View deleteContentView;
+		View cloneContentView;
 
 		public RemovableItemHolder(View itemView, int viewType) {
 			super(itemView);
 			this.itemView = itemView;
 
 			if(viewType == VIEW_TYPE_ADD){
-				this.addGuard = itemView.findViewById(R.id.add_guard);
 				this.addView = itemView.findViewById(R.id.add_view);
 				this.addText = (EditText) itemView.findViewById(R.id.content_entry);
 				this.addButton = (Button) itemView.findViewById(R.id.add_content_entry);
 			} else {
 				this.contentView = (TextView) itemView.findViewById(R.id.content_view);
 				this.deleteContentView = itemView.findViewById(R.id.remove_content);
+				this.cloneContentView = itemView.findViewById(R.id.clone_content);
 			}
 		}
 	}
@@ -55,11 +57,13 @@ public class RemovableItemAdapter extends RecyclerView.Adapter<RemovableItemAdap
 	private Context mContext;
 	private List<String> mEntries;
 	private boolean mAllowEmpty;
+	private String cachedClone;
 
 	public RemovableItemAdapter(Context context, List<String> entries, boolean allowCompletelyEmpty){
 		this.mContext = context;
 		this.mEntries = entries;
 		this.mAllowEmpty = allowCompletelyEmpty;
+		cachedClone = null;
 	}
 
 	@Override
@@ -73,51 +77,18 @@ public class RemovableItemAdapter extends RecyclerView.Adapter<RemovableItemAdap
 		int viewType = getItemViewType(position);
 
 		if(viewType == VIEW_TYPE_ADD) {
-			holder.addGuard.setVisibility(mEntries.isEmpty() ? View.INVISIBLE : View.VISIBLE);
-			holder.addText.setText("");
-			holder.addView.setVisibility(mEntries.isEmpty() ? View.VISIBLE : View.INVISIBLE);
-			holder.addGuard.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					ObjectAnimator guardAway = ObjectAnimator.ofFloat(holder.addGuard, "translationY", 0, (float) holder.itemView.getHeight());
-					ObjectAnimator editTowards = ObjectAnimator.ofFloat(holder.addView, "translationY", (float) -holder.itemView.getHeight(), 0);
-					AnimatorSet set = new AnimatorSet();
-					set.playTogether(guardAway, editTowards);
-					set.addListener(new Animator.AnimatorListener() {
-						@Override
-						public void onAnimationStart(Animator animation) {
-							holder.addGuard.setVisibility(View.VISIBLE);
-							holder.addView.setVisibility(View.VISIBLE);
-						}
-
-						@Override
-						public void onAnimationEnd(Animator animation) {
-							holder.addGuard.setVisibility(View.INVISIBLE);
-							holder.addView.setVisibility(View.VISIBLE);
-							holder.addGuard.setTranslationY(0F);
-							holder.addView.setTranslationY(0F);
-						}
-
-						@Override
-						public void onAnimationCancel(Animator animation) {
-							holder.addGuard.setVisibility(View.INVISIBLE);
-							holder.addView.setVisibility(View.VISIBLE);
-							holder.addGuard.setTranslationY(0F);
-							holder.addView.setTranslationY(0F);
-						}
-
-						@Override
-						public void onAnimationRepeat(Animator animation) {
-						}
-					});
-					set.setDuration(500L);
-					set.start();
-				}
-			});
+			if(cachedClone == null) {
+				holder.addText.setText("");
+			} else {
+				holder.addText.setText(cachedClone);
+				holder.addText.setSelection(cachedClone.length());
+				cachedClone = null;
+			}
+			holder.addText.requestFocus();
 			holder.addText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
 				@Override
 				public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-					if(actionId == R.id.add_content_entry || (event != null && event.getKeyCode() == KeyEvent.KEYCODE_ENTER)) {
+					if(actionId == R.id.add_content_entry || (event != null && event.getAction() == KeyEvent.ACTION_DOWN && event.getKeyCode() == KeyEvent.KEYCODE_ENTER)) {
 						holder.addButton.performClick();
 						return true;
 					}
@@ -128,8 +99,14 @@ public class RemovableItemAdapter extends RecyclerView.Adapter<RemovableItemAdap
 				@Override
 				public void onClick(View v) {
 					if(!holder.addText.getText().toString().isEmpty()){
-						String entry = holder.addText.getText().toString();
-						mEntries.add(entry);
+						String toAdd = holder.addText.getText().toString();
+						for(String s : mEntries) {
+							if (s.toLowerCase(Locale.getDefault()).equals(toAdd.toLowerCase(Locale.getDefault()))) {
+								Toast.makeText(mContext, R.string.already_have_one, Toast.LENGTH_LONG).show();
+								return;
+							}
+						}
+						mEntries.add(toAdd);
 
 						notifyItemInserted(mEntries.size() - 1);
 						notifyItemChanged(mEntries.size());
@@ -148,6 +125,13 @@ public class RemovableItemAdapter extends RecyclerView.Adapter<RemovableItemAdap
 					int position = holder.getAdapterPosition();
 					mEntries.remove(position); //Okay thanks to forced rebinding (still slow though)
 					notifyItemRemoved(position);
+				}
+			});
+			holder.cloneContentView.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					cachedClone = holder.contentView.getText().toString();
+					notifyItemChanged(mEntries.size());
 				}
 			});
 		}

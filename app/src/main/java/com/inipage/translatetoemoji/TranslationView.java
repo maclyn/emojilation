@@ -104,7 +104,7 @@ public class TranslationView extends View {
 		
 		leftBoxPadding = BOX_THICKNESS + HORIZONTAL_PADDING;
 		rightBoxPadding = BOX_THICKNESS + HORIZONTAL_PADDING;
-		topBoxPadding = BOX_THICKNESS + (mTranslations.isEmpty() ? 0 : expectedCharacterRowHeight);
+		topBoxPadding = BOX_THICKNESS + expectedCharacterRowHeight;
 		bottomBoxPadding = BOX_THICKNESS;
 		expectedWidth = leftBoxPadding + tempRect.width() + rightBoxPadding;
 		expectedHeight = topBoxPadding + ((ROW_HEIGHT + BOX_THICKNESS) * mTranslations.size()) + bottomBoxPadding;
@@ -159,7 +159,7 @@ public class TranslationView extends View {
 			if(chunksToUse.containsKey(i)){
 				TranslationChunk chunk = chunksToUse.get(i);
 				result.append(Utilities.convertDisplayFormatEmojisToString(chunk.getDisplay()));
-				i = chunk.getEndIndex() + 1;
+				i = chunk.getEndIndex();
 			} else {
 				result.append(mText.charAt(i));
 			}

@@ -3,7 +3,10 @@
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:background="?android:attr/selectableItemBackground"
-				android:padding="8dp">
+				android:paddingTop="8dp"
+				android:paddingBottom="8dp"
+				android:paddingLeft="16dp"
+				android:paddingRight="16dp">
 
 	<TextView
 		android:id="@+id/content_view"
@@ -11,12 +14,21 @@
 		android:layout_height="wrap_content"
 		android:layout_alignParentLeft="true"
 		android:layout_centerVertical="true"
-		android:layout_toLeftOf="@+id/remove_content"
+		android:layout_toLeftOf="@+id/clone_content"
 		android:ellipsize="marquee"
 		android:gravity="left|center_vertical"
 		android:text="@string/sample_text"
 		android:textColor="@color/textColorPrimary"
 		android:textSize="16sp"/>
+
+	<ImageView
+		android:id="@+id/clone_content"
+		android:layout_width="36dp"
+		android:layout_height="36dp"
+		android:layout_toLeftOf="@+id/remove_content"
+		android:layout_centerVertical="true"
+		android:src="@drawable/ic_content_copy_black_24dp"
+		android:padding="4dp"/>
 
 	<ImageView
 		android:id="@+id/remove_content"
