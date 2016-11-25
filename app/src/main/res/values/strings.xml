@@ -11,7 +11,7 @@
     <string name="clipboard_text">Translation of %s to emoji</string>
     <string name="copied_to_clipboard">`%s` copied to clipboard.</string>
     <string name="sample_text">Sample text goes here</string>
-    <string name="metadata_content">%1$s/%2$s</string>
+    <string name="metadata_content">%1$d/%2$d</string>
     <string name="edit_phrases">Edit Phrases</string>
     <string name="done">Done</string>
     <string name="add">Add</string>
@@ -61,7 +61,15 @@
     <string name="entry_added">Entry added.</string>
     <string name="you_already_have_an_entry">There\'s already an entry for \'%s\'.</string>
     <string name="phrase_used_here">Oops! The phrase `%s` is already used here.</string>
-    <string name="dictionary_info">Dictionary Info</string>
+    <string name="dictionary_info">Dictionary info</string>
     <string name="dict_info_block">Filename: %1$s\nAuthor: %2$s\nLanguage/Locale: %3$s/%4$s</string>
     <string name="already_have_one">This entry already appears above.</string>
+    <string name="new_dictionary">New dictionary</string>
+    <string name="this_phrase_already_associated_with">This phrase is already associated with the emoji `%s`.</string>
+    <string name="edit_tags">Edit Tags</string>
+    <string name="share_dictionary">Share dictionary</string>
+    <string name="save_before_share_message">You\'ll have to save your dictionary first.</string>
+    <string name="look_at_cool_dict">Check out %s\'s emoji dictionary!</string>
+    <string name="download_to_view">Copy the attached file to the `%s` directory on your device to load it into TranslateToEmoji, or download it from the Play Store at TODO_ADD_URL.</string>
+    <string name="no_sharing_activities">No apps for sharing found on your phone : (</string>
 </resources>

@@ -278,6 +278,9 @@
 					"code" : "1F924",
 					"has_modifier" : false
 				}
+			],
+			"tags": [
+				"silly"
 			]
 		}, {
 			"phrases" : ["unamused face"],

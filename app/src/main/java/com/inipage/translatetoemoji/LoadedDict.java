@@ -109,6 +109,12 @@ public class LoadedDict {
 		mIsDictDirty = true;
 	}
 
+	public void modifyEntryTags(EmojiEntry entry, List<String> newTags){
+		String[] result = newTags.toArray(new String[newTags.size()]);
+		entry.setTags(result);
+		mIsDictDirty = true;
+	}
+
 	public Pair<String, Integer> modifyEntryPhrases(EmojiEntry entry, List<String> newPhrases){
 		String[] result = newPhrases.toArray(new String[newPhrases.size()]);
 
@@ -154,7 +160,7 @@ public class LoadedDict {
 			if(mapForLength == null){
 				mapForLength = new TreeMap<>(String.CASE_INSENSITIVE_ORDER);
 				mMaps.put(length, mapForLength);
-				if(length > longestPhrase) longestPhrase = length;
+				if(length > longestPhrase) longestPhrase = length; //TODO: Since we could theoretically bail later, maybe this is a bad idea?
 			}
 
 			if (mapForLength.containsKey(s)){ //We'd be overwriting something -- this isn't new! Ahhh!

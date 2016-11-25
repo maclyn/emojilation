@@ -41,6 +41,11 @@ public class Utilities {
 	private static final int MIN_SYMBOL_CODEPOINT = 0x2500;
 	private static final int MAX_SYMBOL_CODEPOINT = 0x2800;
 
+	/**
+	 * Get the user's preferred dictionary. If none is set, the default dictionary will be returned.
+	 * @param context A valid context.
+	 * @return The user's preferred dictionary.
+	 */
 	public static String getPreferredDict(Context context) {
 		return PreferenceManager.getDefaultSharedPreferences(context).getString(Constants.DICTIONARY_CHOICE_PREF, Constants.DEFAULT_DICT);
 	}

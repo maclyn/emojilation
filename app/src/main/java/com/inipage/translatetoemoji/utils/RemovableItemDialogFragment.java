@@ -4,14 +4,12 @@ import android.app.Dialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.WindowManager;
 
 import com.inipage.translatetoemoji.R;
@@ -25,12 +23,14 @@ public class RemovableItemDialogFragment extends DialogFragment {
 	public static final String TITLE_KEY = "title";
 	public static final String DONE_BUTTON_TEXT_KEY = "done_button_text";
 
+    RemovableItemAdapter mAdapter;
 	RecyclerView mRecyclerView;
 	String mTitle;
 	String mDoneButtonTitle;
 	boolean mAllowEmpty;
 	List<String> mEntries;
 	RemovableItemDialogStateListener mListener;
+	private ItemValidatorInterface mValidator;
 
 	public interface RemovableItemDialogStateListener {
 		void onNext(List<String> entries);
@@ -53,6 +53,11 @@ public class RemovableItemDialogFragment extends DialogFragment {
 		mListener = listener;
 	}
 
+	public void setValidator(ItemValidatorInterface validator) {
+		this.mValidator = validator;
+		if(mAdapter != null) mAdapter.setValidator(mValidator);
+	}
+
 	@Override
 	public void setArguments(Bundle args) {
 		super.setArguments(args);
@@ -65,11 +70,13 @@ public class RemovableItemDialogFragment extends DialogFragment {
 	@NonNull
 	@Override
 	public Dialog onCreateDialog(Bundle savedInstanceState) {
-		RemovableItemAdapter adapter = new RemovableItemAdapter(getContext(), mEntries, mAllowEmpty);
+        mAdapter = new RemovableItemAdapter(getContext(), mEntries, mAllowEmpty);
+		if(mValidator != null) mAdapter.setValidator(mValidator);
+
 		View layout = LayoutInflater.from(getContext()).inflate(R.layout.fragment_removable_item_dialog, null, false);
 		mRecyclerView = (RecyclerView) layout.findViewById(R.id.dialog_rv);
 		mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-		mRecyclerView.setAdapter(adapter);
+		mRecyclerView.setAdapter(mAdapter);
 
 		final AlertDialog ad = new AlertDialog.Builder(getContext())
 				.setTitle(mTitle)

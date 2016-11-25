@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import com.inipage.translatetoemoji.model.Codepoint;
 import com.inipage.translatetoemoji.model.EmojiEntry;
+import com.inipage.translatetoemoji.utils.ItemValidatorInterface;
 import com.inipage.translatetoemoji.utils.RemovableItemDialogFragment;
 
 import java.util.ArrayList;
@@ -48,7 +49,7 @@ public class DictionaryAdapter extends RecyclerView.Adapter<DictionaryAdapterVie
 	}
 
 	@Override
-	public void onBindViewHolder(DictionaryAdapterViewHolder holder, final int position) {
+	public void onBindViewHolder(final DictionaryAdapterViewHolder holder, final int position) {
 		final EmojiEntry entry = mData.get(position);
 		Context context = holder.entryEmojiTv.getContext();
 
@@ -89,6 +90,9 @@ public class DictionaryAdapter extends RecyclerView.Adapter<DictionaryAdapterVie
 							case R.id.edit_emoji:
 								displayEditEmojiDialog(index);
 								return true;
+							case R.id.edit_tags:
+								displayEditTagsDialog(index);
+								return true;
 							case R.id.delete_entry:
 								deleteEntry(index);
 								return true;
@@ -97,6 +101,12 @@ public class DictionaryAdapter extends RecyclerView.Adapter<DictionaryAdapterVie
 					}
 				});
 				popupMenu.show();
+			}
+		});
+		holder.itemView.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				holder.menuIv.performClick();
 			}
 		});
 	}
@@ -143,6 +153,14 @@ public class DictionaryAdapter extends RecyclerView.Adapter<DictionaryAdapterVie
 			public void onGone() {
 			}
 		});
+		df.setValidator(new ItemValidatorInterface(){
+			@Override
+			public String validate(String item) {
+				Codepoint[] existingEntry = LoadedDict.getInstance().getMatch(item);
+				return existingEntry == null ? null : mContext.getString(R.string.this_phrase_already_associated_with,
+						Utilities.convertDisplayFormatEmojisToString(existingEntry[0].getCode()));
+			}
+		});
 		df.show(mFragment.getChildFragmentManager(), "edit_phrases");
 	}
 
@@ -182,6 +200,39 @@ public class DictionaryAdapter extends RecyclerView.Adapter<DictionaryAdapterVie
 			}
 		});
 		df.show(mFragment.getChildFragmentManager(), "edit_emoji");
+	}
+
+	private void displayEditTagsDialog(final int index) {
+		ArrayList<String> tags = new ArrayList<>();
+		if(mData.get(index).getTags() != null) {
+			for (String s : mData.get(index).getTags()) {
+				tags.add(s);
+			}
+		}
+		RemovableItemDialogFragment df = RemovableItemDialogFragment.getInstance(
+				tags,
+				mContext.getString(R.string.edit_tags),
+				mContext.getString(R.string.save),
+				true);
+		df.setListener(new RemovableItemDialogFragment.RemovableItemDialogStateListener() {
+			@Override
+			public void onNext(List<String> toSave) {
+				LoadedDict.getInstance().modifyEntryTags(mData.get(index), toSave);
+                notifyItemChanged(index);
+			}
+
+			@Override
+			public void onGone() {
+			}
+		});
+
+		df.setValidator(new ItemValidatorInterface(){
+			@Override
+			public String validate(String item) {
+				return null; //Always validates
+			}
+		});
+		df.show(mFragment.getChildFragmentManager(), "edit_tags");
 	}
 
 	private void deleteEntry(final int index) {

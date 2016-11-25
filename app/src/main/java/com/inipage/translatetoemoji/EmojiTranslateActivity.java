@@ -2,9 +2,11 @@ package com.inipage.translatetoemoji;
 
 import android.Manifest;
 import android.annotation.TargetApi;
+import android.content.ActivityNotFoundException;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Environment;
 import android.support.annotation.NonNull;
@@ -230,6 +232,9 @@ public class EmojiTranslateActivity extends AppCompatActivity implements Fragmen
 			case R.id.dict_info:
 				showDictionaryInfo();
 				break;
+			case R.id.new_dictionary:
+				showNewMenu();
+				break;
 			case R.id.load_emoji:
 				if (!Utilities.canReadExternalStorage(this)) {
 					requestPermissions(new String[] {Manifest.permission.WRITE_EXTERNAL_STORAGE}, READ_DICTIONARY_REQUEST_CODE);
@@ -264,10 +269,32 @@ public class EmojiTranslateActivity extends AppCompatActivity implements Fragmen
 						.show();
 				break;
 				*/
+			case R.id.share_dict:
+				showShare();
+				break;
 			case R.id.search_emoji:
 				break;
 		}
 		return true;
+	}
+
+	private void showShare() {
+		if(Utilities.isDictionaryFromAssets(LoadedDict.getInstance().getFilename()) || LoadedDict.getInstance().isDictDirty()){
+			Toast.makeText(this, R.string.save_before_share_message, Toast.LENGTH_SHORT).show();
+			saveDictionary();
+			return;
+		}
+
+		Intent shareIntent = new Intent(Intent.ACTION_SEND);
+		shareIntent.setType("application/json");
+		shareIntent.putExtra(Intent.EXTRA_SUBJECT, "shared_dict.json");
+		shareIntent.putExtra(Intent.EXTRA_TEXT, getString(R.string.download_to_view, Constants.EXTERNAL_STORAGE_PATH));
+		shareIntent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(new File(LoadedDict.getInstance().getFilename())));
+		try {
+			startActivity(shareIntent);
+		} catch (ActivityNotFoundException anfe) {
+			Toast.makeText(this, R.string.no_sharing_activities, Toast.LENGTH_SHORT).show();
+		}
 	}
 
 	@Override
@@ -359,6 +386,11 @@ public class EmojiTranslateActivity extends AppCompatActivity implements Fragmen
 					}
 				})
 				.show();
+	}
+
+
+	private void showNewMenu() {
+		//Creates a new dictionary; this is rather tough...
 	}
 
 	private void saveDictionary() {

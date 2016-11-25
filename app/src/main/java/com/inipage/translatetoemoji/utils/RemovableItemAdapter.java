@@ -1,15 +1,11 @@
 package com.inipage.translatetoemoji.utils;
 
-import android.animation.Animator;
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.Animation;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -58,6 +54,7 @@ public class RemovableItemAdapter extends RecyclerView.Adapter<RemovableItemAdap
 	private List<String> mEntries;
 	private boolean mAllowEmpty;
 	private String cachedClone;
+	private ItemValidatorInterface mValidator;
 
 	public RemovableItemAdapter(Context context, List<String> entries, boolean allowCompletelyEmpty){
 		this.mContext = context;
@@ -102,10 +99,18 @@ public class RemovableItemAdapter extends RecyclerView.Adapter<RemovableItemAdap
 						String toAdd = holder.addText.getText().toString();
 						for(String s : mEntries) {
 							if (s.toLowerCase(Locale.getDefault()).equals(toAdd.toLowerCase(Locale.getDefault()))) {
+								Utilities.wiggle(holder.addText);
 								Toast.makeText(mContext, R.string.already_have_one, Toast.LENGTH_LONG).show();
 								return;
 							}
 						}
+						String response;
+						if(mValidator != null && (response = mValidator.validate(toAdd)) != null){
+							Utilities.wiggle(holder.addText);
+							Toast.makeText(mContext, response, Toast.LENGTH_LONG).show();
+							return;
+						}
+
 						mEntries.add(toAdd);
 
 						notifyItemInserted(mEntries.size() - 1);
@@ -145,5 +150,9 @@ public class RemovableItemAdapter extends RecyclerView.Adapter<RemovableItemAdap
 	@Override
 	public int getItemViewType(int position) {
 		return position >= mEntries.size() ? VIEW_TYPE_ADD : VIEW_TYPE_ENTRY;
+	}
+
+	public void setValidator(ItemValidatorInterface mValidator) {
+		this.mValidator = mValidator;
 	}
 }

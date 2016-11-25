@@ -35,6 +35,7 @@ import android.widget.Toast;
 import com.inipage.translatetoemoji.model.Codepoint;
 import com.inipage.translatetoemoji.model.EmojiEntry;
 import com.inipage.translatetoemoji.utils.DividerItemViewDecoration;
+import com.inipage.translatetoemoji.utils.ItemValidatorInterface;
 import com.inipage.translatetoemoji.utils.RemovableItemDialogFragment;
 import com.inipage.translatetoemoji.workingmodel.PhrasePiece;
 import com.inipage.translatetoemoji.workingmodel.TranslationChunk;
@@ -115,6 +116,14 @@ public class EditFragment extends Fragment implements ScrollableFragment {
 			public void onGone() {
 			}
 		});
+		df.setValidator(new ItemValidatorInterface(){
+			@Override
+			public String validate(String item) {
+				Codepoint[] existingEntry = LoadedDict.getInstance().getMatch(item);
+				return existingEntry == null ? null : getString(R.string.this_phrase_already_associated_with,
+						Utilities.convertDisplayFormatEmojisToString(existingEntry[0].getCode()));
+			}
+		});
 		df.show(getChildFragmentManager(), "add_phrase");
 	}
 
@@ -143,7 +152,7 @@ public class EditFragment extends Fragment implements ScrollableFragment {
 					//Convert lists to arrays
 					String[] phrasesArray = phrases.toArray(new String[phrases.size()]);
 					Codepoint[] codepointsArray = toSave.toArray(new Codepoint[toSave.size()]);
-					String existingEntry = LoadedDict.getInstance().addEntry(new EmojiEntry(phrasesArray, codepointsArray));
+					String existingEntry = LoadedDict.getInstance().addEntry(new EmojiEntry(phrasesArray, codepointsArray, null));
 					if(existingEntry == null) {
 						Toast.makeText(getContext(), getContext().getString(R.string.entry_added), Toast.LENGTH_SHORT).show();
 						recyclerView.getAdapter().notifyDataSetChanged();
@@ -172,6 +181,12 @@ public class EditFragment extends Fragment implements ScrollableFragment {
 
 			@Override
 			public void onGone() {
+			}
+		});
+		df.setValidator(new ItemValidatorInterface() {
+			@Override
+			public String validate(String item) {
+				return null; //For now, we validate 'em all! [multiple phrase -> same emoji mappings are a-okay)
 			}
 		});
 		df.show(getChildFragmentManager(), "add_emoji");

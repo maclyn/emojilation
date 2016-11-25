@@ -1,9 +1,10 @@
 package com.inipage.translatetoemoji;
 
+import android.os.StrictMode;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.inipage.translatetoemoji.model.EmojiDictionary;
-import com.inipage.translatetoemoji.model.EmojiDictionaryReference;
 
 import java.util.Locale;
 
@@ -13,6 +14,15 @@ public class Application extends android.app.Application {
     @Override
     public void onCreate() {
         super.onCreate();
+
+		//Because I'm not going to write a file provider simply because I share a file the user *explicitly* grants access to;
+		//for goodness sakes...
+		StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
+		StrictMode.setVmPolicy(builder.build());
+
+		for(Locale l : Locale.getAvailableLocales()){
+			Log.d(TAG, "Locale: " + l.getCountry() + " " + l.getLanguage());
+		}
 
         //Load the appropriate locale for the user's country, or their preference
         String preferredDict = Utilities.getPreferredDict(this);

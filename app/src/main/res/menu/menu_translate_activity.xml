@@ -6,7 +6,7 @@
 		android:title="@string/save"
 		android:icon="@drawable/ic_save_white_24dp"
 		android:orderInCategory="1"
-		app:showAsAction="ifRoom"/>
+		app:showAsAction="always"/>
 
 	<item
 		android:id="@+id/search_emoji"
@@ -17,12 +17,22 @@
 		android:title="@string/search_emoji"/>
 
 	<item
+		android:id="@+id/new_dictionary"
+		android:orderInCategory="6"
+		android:title="@string/new_dictionary" />
+
+	<item
 		android:id="@+id/load_emoji"
-		android:orderInCategory="3"
+		android:orderInCategory="4"
 		android:title="@string/load_dictionary" />
 
 	<item
 		android:id="@+id/dict_info"
 		android:orderInCategory="3"
 		android:title="@string/dictionary_info" />
+
+	<item
+		android:id="@+id/share_dict"
+		android:orderInCategory="5"
+		android:title="@string/share_dictionary" />
 </menu>
