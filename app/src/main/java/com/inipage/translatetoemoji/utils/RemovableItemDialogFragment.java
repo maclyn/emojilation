@@ -8,6 +8,7 @@ import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.WindowManager;
@@ -18,12 +19,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RemovableItemDialogFragment extends DialogFragment {
+	private static final String TAG = "RemovableItemDialogFrag";
+
 	public static final String ENTRIES_KEY = "entries";
 	public static final String ALLOW_EMPTY_KEY = "allow_empty";
 	public static final String TITLE_KEY = "title";
 	public static final String DONE_BUTTON_TEXT_KEY = "done_button_text";
 
-    RemovableItemAdapter mAdapter;
+	RemovableItemAdapter mAdapter;
 	RecyclerView mRecyclerView;
 	String mTitle;
 	String mDoneButtonTitle;
@@ -101,15 +104,18 @@ public class RemovableItemDialogFragment extends DialogFragment {
 
 	@Override
 	public void onCancel(DialogInterface dialog) {
+		super.onCancel(dialog);
 		onFinished();
 	}
 
 	@Override
 	public void onDismiss(DialogInterface dialog) {
+		super.onDismiss(dialog);
 		onFinished();
 	}
 
 	private void onFinished() {
-		if(mListener != null) mListener.onGone();
+		if(mListener != null)
+			mListener.onGone();
 	}
 }

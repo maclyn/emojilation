@@ -14,6 +14,7 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.MenuCompat;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -156,6 +157,20 @@ public class EmojiTranslateActivity extends AppCompatActivity implements Fragmen
 			}
 		});
 		tabs.setupWithViewPager(pager);
+	}
+
+	@Override
+	protected void onResume() {
+		super.onResume();
+        
+        //Remove any pending DialogFragments (ugh, I know)
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        Fragment taggedFragment = getSupportFragmentManager().findFragmentByTag("edit_tags");
+        if(taggedFragment != null){
+            ft.remove(taggedFragment);
+            Log.d(TAG, "Tagged found!");
+        }
+        ft.commit();
 	}
 
 	MenuItem actionMenuItem;
