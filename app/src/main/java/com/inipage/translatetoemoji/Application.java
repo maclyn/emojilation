@@ -20,9 +20,9 @@ public class Application extends android.app.Application {
 		StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
 		StrictMode.setVmPolicy(builder.build());
 
-		for(Locale l : Locale.getAvailableLocales()){
-			Log.d(TAG, "Locale: " + l.getCountry() + " " + l.getLanguage());
-		}
+//		for(Locale l : Locale.getAvailableLocales()){
+//			Log.d(TAG, "Locale: " + l.getCountry() + " " + l.getLanguage());
+//		}
 
         //Load the appropriate locale for the user's country, or their preference
         String preferredDict = Utilities.getPreferredDict(this);

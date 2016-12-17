@@ -162,15 +162,6 @@ public class EmojiTranslateActivity extends AppCompatActivity implements Fragmen
 	@Override
 	protected void onResume() {
 		super.onResume();
-        
-        //Remove any pending DialogFragments (ugh, I know)
-        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-        Fragment taggedFragment = getSupportFragmentManager().findFragmentByTag("edit_tags");
-        if(taggedFragment != null){
-            ft.remove(taggedFragment);
-            Log.d(TAG, "Tagged found!");
-        }
-        ft.commit();
 	}
 
 	MenuItem actionMenuItem;
@@ -287,7 +278,7 @@ public class EmojiTranslateActivity extends AppCompatActivity implements Fragmen
 			case R.id.share_dict:
 				showShare();
 				break;
-			case R.id.search_emoji:
+			case R.id.search_emoji: /** Intentionally blank. **/
 				break;
 		}
 		return true;
@@ -302,7 +293,7 @@ public class EmojiTranslateActivity extends AppCompatActivity implements Fragmen
 
 		Intent shareIntent = new Intent(Intent.ACTION_SEND);
 		shareIntent.setType("application/json");
-		shareIntent.putExtra(Intent.EXTRA_SUBJECT, "shared_dict.json");
+		shareIntent.putExtra(Intent.EXTRA_SUBJECT, LoadedDict.getInstance().getFilename());
 		shareIntent.putExtra(Intent.EXTRA_TEXT, getString(R.string.download_to_view, Constants.EXTERNAL_STORAGE_PATH));
 		shareIntent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(new File(LoadedDict.getInstance().getFilename())));
 		try {
@@ -341,8 +332,7 @@ public class EmojiTranslateActivity extends AppCompatActivity implements Fragmen
 				.setMessage(getString(R.string.dict_info_block,
 						LoadedDict.getInstance().getFilename(),
 						LoadedDict.getInstance().getAuthor(),
-						LoadedDict.getInstance().getLanguage(),
-						LoadedDict.getInstance().getLocale()))
+						LoadedDict.getInstance().getLanguage()))
 				.setPositiveButton(R.string.done, null)
 				.show();
 	}
@@ -417,6 +407,9 @@ public class EmojiTranslateActivity extends AppCompatActivity implements Fragmen
 					if (LoadedDict.getInstance().saveToDisk(path)) {
 						Toast.makeText(EmojiTranslateActivity.this, R.string.saved, Toast.LENGTH_SHORT).show();
 						Utilities.setPreferredDict(EmojiTranslateActivity.this, path);
+						LoadedDict.getInstance().setDictionary(path, Utilities.loadDictionaryFromExternalStorage(Utilities.getPreferredDict(EmojiTranslateActivity.this)));
+						EditFragment edit = (EditFragment) ((FragmentPagerAdapter) pager.getAdapter()).getItem(1);
+						edit.setAdapter();
 					} else {
 						Toast.makeText(EmojiTranslateActivity.this, R.string.failed_to_save, Toast.LENGTH_SHORT).show();
 					}

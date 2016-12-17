@@ -2,6 +2,7 @@ package com.inipage.translatetoemoji;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.PopupMenu;
@@ -18,12 +19,14 @@ import com.inipage.translatetoemoji.model.Codepoint;
 import com.inipage.translatetoemoji.model.EmojiEntry;
 import com.inipage.translatetoemoji.utils.ItemValidatorInterface;
 import com.inipage.translatetoemoji.utils.RemovableItemDialogFragment;
+import com.simplecityapps.recyclerview_fastscroll.views.FastScrollRecyclerView;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Locale;
 
-public class DictionaryAdapter extends RecyclerView.Adapter<DictionaryAdapterViewHolder> {
+public class DictionaryAdapter extends RecyclerView.Adapter<DictionaryAdapterViewHolder> implements FastScrollRecyclerView.SectionedAdapter {
 	public static final int VIEW_TYPE_ENTRY = 1;
 
 	List<EmojiEntry> mData;
@@ -252,5 +255,12 @@ public class DictionaryAdapter extends RecyclerView.Adapter<DictionaryAdapterVie
 						dialog.dismiss();
 					}
 				}).show();
+	}
+
+	@NonNull
+	@Override
+	public String getSectionName(int position) {
+		if(mData == null) return "?";
+		return mData.get(position).getPhrases()[0].substring(0, 1).toUpperCase(Locale.getDefault());
 	}
 }

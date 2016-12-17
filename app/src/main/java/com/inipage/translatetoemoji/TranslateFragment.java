@@ -11,6 +11,8 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.TypedValue;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -93,6 +95,20 @@ public class TranslateFragment extends Fragment {
 				return false;
 			}
 		});
+		input.addTextChangedListener(new TextWatcher() {
+			@Override
+			public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+			}
+
+			@Override
+			public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+				translate.setEnabled(charSequence.length() > 0);
+			}
+
+			@Override
+			public void afterTextChanged(Editable editable) {
+			}
+		});
 		copyMessage.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -103,8 +119,6 @@ public class TranslateFragment extends Fragment {
 				cm.setPrimaryClip(clipData);
 
 				Toast.makeText(v.getContext(), getString(R.string.copied_to_clipboard, output.generateResult()), Toast.LENGTH_SHORT).show();
-
-				getActivity().finish();
 			}
 		});
 		replaceMessage.setOnClickListener(new View.OnClickListener() {
@@ -115,9 +129,15 @@ public class TranslateFragment extends Fragment {
 				resultData.putExtra(Intent.EXTRA_PROCESS_TEXT, sequence);
 				TranslateFragment.this.getActivity().setResult(Activity.RESULT_OK, resultData);
 
+				Toast.makeText(v.getContext(), getString(R.string.replace_in_place, output.generateResult()), Toast.LENGTH_SHORT).show();
+
 				getActivity().finish();
 			}
 		});
+
+		translate.setEnabled(false);
+		copyMessage.setEnabled(false);
+		replaceMessage.setEnabled(false);
 
 		return layout;
 	}
@@ -128,6 +148,7 @@ public class TranslateFragment extends Fragment {
 
 		if(hasInitialText){
 			input.setText(initialText);
+			translate();
 			replaceMessage.setVisibility(isReadyOnly ? View.GONE : View.VISIBLE);
 		} else {
 			replaceMessage.setVisibility(View.GONE);
@@ -155,6 +176,10 @@ public class TranslateFragment extends Fragment {
 			protected void onPostExecute(List<List<TranslationChunk>> lists) {
 				output.setup(message, lists);
 				output.selectDefaults();
+
+				translate.setEnabled(false);
+				copyMessage.setEnabled(true);
+				replaceMessage.setEnabled(true);
 
 				dialog.dismiss();
 			}

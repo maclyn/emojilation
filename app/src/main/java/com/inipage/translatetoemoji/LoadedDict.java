@@ -255,8 +255,4 @@ public class LoadedDict {
 	public String getLanguage(){
 		return mDict.getLanguage();
 	}
-
-	public String getLocale() {
-		return mDict.getLocale();
-	}
 }

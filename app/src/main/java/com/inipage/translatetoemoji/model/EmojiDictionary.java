@@ -4,7 +4,6 @@ import java.util.List;
 
 public class EmojiDictionary {
 	private String language;
-	private String locale;
 	private String author;
 	private String delimiter;
 	private List<String> connectors;
@@ -12,10 +11,6 @@ public class EmojiDictionary {
 
 	public String getLanguage() {
 		return language;
-	}
-
-	public String getLocale() {
-		return locale;
 	}
 
 	public String getAuthor() {

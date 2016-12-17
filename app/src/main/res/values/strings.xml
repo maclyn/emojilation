@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">Translate to Emoji</string>
-    <string name="your_original_text">Your original message</string>
-    <string name="copy_emoji_message">Copy Message</string>
-    <string name="replace_original_message">Replace Message</string>
+    <string name="your_original_text">Text to translate</string>
+    <string name="copy_emoji_message">Copy</string>
+    <string name="replace_original_message">Change</string>
     <string name="edit_dictionary">Dictionary</string>
     <string name="translate">Translate</string>
     <string name="no_message_to_translate">No message to translate.</string>
@@ -10,6 +10,7 @@
     <string name="please_wait">Please wait</string>
     <string name="clipboard_text">Translation of %s to emoji</string>
     <string name="copied_to_clipboard">`%s` copied to clipboard.</string>
+    <string name="replace_in_place">Replaced original text with `%s`.</string>
     <string name="sample_text">Sample text goes here</string>
     <string name="metadata_content">%1$d/%2$d</string>
     <string name="edit_phrases">Edit Phrases</string>
@@ -62,7 +63,7 @@
     <string name="you_already_have_an_entry">There\'s already an entry for \'%s\'.</string>
     <string name="phrase_used_here">Oops! The phrase `%s` is already used here.</string>
     <string name="dictionary_info">Dictionary info</string>
-    <string name="dict_info_block">Filename: %1$s\nAuthor: %2$s\nLanguage/Locale: %3$s/%4$s</string>
+    <string name="dict_info_block">Filename: %1$s\nAuthor: %2$s\nLanguage: %3$s</string>
     <string name="already_have_one">This entry already appears above.</string>
     <string name="new_dictionary">New dictionary</string>
     <string name="this_phrase_already_associated_with">This phrase is already associated with the emoji `%s`.</string>
@@ -72,4 +73,7 @@
     <string name="look_at_cool_dict">Check out %s\'s emoji dictionary!</string>
     <string name="download_to_view">Copy the attached file to the `%s` directory on your device to load it into TranslateToEmoji, or download it from the Play Store at TODO_ADD_URL.</string>
     <string name="no_sharing_activities">No apps for sharing found on your phone : (</string>
+    <string name="dictionary_name">Dictionary Name</string>
+    <string name="dictionary_author">Dictionary Author</string>
+    <string name="emojify">Emoji</string>
 </resources>

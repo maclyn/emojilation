@@ -2,7 +2,7 @@ package com.inipage.translatetoemoji.workingmodel;
 
 /**
  * Literally just so we can all extend from something. Could be an object; might come to share
- * sonmething unique later on, though (for debugging?), hence the custom class.
+ * something unique later on, though (for debugging?), hence the custom class.
  */
 public class RootText {
 	private int startIndex;

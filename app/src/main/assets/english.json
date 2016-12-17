@@ -1,7 +1,6 @@
 {
 	"language" : "English",
 	"author" : "Maclyn, based off a file from the Unicode Consortium",
-	"locale" : "United States",
 	"delimiter" : " ",
 	"connectors": [
 		"-", "_", "'"

@@ -17,7 +17,7 @@
 			android:id="@+id/content_entry"
 			android:maxLines="1"
 			android:ellipsize="end"
-			android:inputType="text"
+			android:inputType="textShortMessage"
 			android:hint="@string/nothing_yet"
 			android:imeActionId="@+id/input_entry"
 			android:imeActionLabel="@string/enter_entry"
