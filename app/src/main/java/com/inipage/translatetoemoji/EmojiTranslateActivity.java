@@ -2,6 +2,7 @@ package com.inipage.translatetoemoji;
 
 import android.Manifest;
 import android.annotation.TargetApi;
+import android.app.Dialog;
 import android.content.ActivityNotFoundException;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -33,6 +34,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ScrollView;
@@ -275,6 +277,7 @@ public class EmojiTranslateActivity extends AppCompatActivity implements Fragmen
 						.show();
 				break;
 				*/
+				break;
 			case R.id.share_dict:
 				showShare();
 				break;
@@ -396,6 +399,54 @@ public class EmojiTranslateActivity extends AppCompatActivity implements Fragmen
 
 	private void showNewMenu() {
 		//Creates a new dictionary; this is rather tough...
+		final AlertDialog d = new AlertDialog.Builder(this)
+				.setTitle(R.string.create_dictionary)
+				.setNegativeButton(R.string.cancel, null)
+				.setPositiveButton(R.string.create, new DialogInterface.OnClickListener() {
+					@Override
+					public void onClick(DialogInterface dialogInterface, int i) {}
+				})
+				.setView(R.layout.dialog_new_dictionary)
+				.create();
+		d.show();
+		d.getButton(DialogInterface.BUTTON_POSITIVE).setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				String author = ((TextView) d.findViewById(R.id.dict_author)).getText().toString();
+				String language = ((TextView) d.findViewById(R.id.dict_language)).getText().toString();
+				String filename = ((TextView) d.findViewById(R.id.dict_filename)).getText().toString();
+				boolean useBase = ((CheckBox) d.findViewById(R.id.base_off_current)).isChecked();
+
+				if(filename.isEmpty() || author.isEmpty() || language.isEmpty()){
+					Toast.makeText(EmojiTranslateActivity.this, R.string.provide_all_info, Toast.LENGTH_SHORT).show();
+					return;
+				}
+
+                String path = Environment.getExternalStorageDirectory().getPath() + "/" + Constants.EXTERNAL_STORAGE_PATH + "/" + filename + ".json";
+                EmojiDictionary newDict = null;
+                if(useBase){
+                    newDict = LoadedDict.getInstance().getDictionary().dup();
+                    newDict.setAuthor(author);
+                    newDict.setLanguage(language);
+                } else {
+                    newDict = new EmojiDictionary(language, author, " ",
+                            LoadedDict.getInstance().getDictionary().getConnectors(),
+                            new ArrayList<EmojiEntry>(1));
+                }
+
+                if (LoadedDict.getInstance().saveToDisk(newDict, path)) {
+                    Toast.makeText(EmojiTranslateActivity.this, R.string.new_dictionary_created, Toast.LENGTH_SHORT).show();
+                    Utilities.setPreferredDict(EmojiTranslateActivity.this, path);
+                    LoadedDict.getInstance().setDictionary(path, Utilities.loadDictionaryFromExternalStorage(Utilities.getPreferredDict(EmojiTranslateActivity.this)));
+                    EditFragment edit = (EditFragment) ((FragmentPagerAdapter) pager.getAdapter()).getItem(1);
+                    edit.setAdapter();
+                } else {
+                    Toast.makeText(EmojiTranslateActivity.this, R.string.failed_to_create, Toast.LENGTH_LONG).show();
+                }
+
+				d.dismiss();
+			}
+		});
 	}
 
 	private void saveDictionary() {
@@ -404,7 +455,7 @@ public class EmojiTranslateActivity extends AppCompatActivity implements Fragmen
 				@Override
 				public boolean onDone(String text) {
 					String path = Environment.getExternalStorageDirectory().getPath() + "/" + Constants.EXTERNAL_STORAGE_PATH + "/" + text + ".json";
-					if (LoadedDict.getInstance().saveToDisk(path)) {
+					if (LoadedDict.getInstance().saveToDisk(LoadedDict.getInstance().getDictionary(), path)) {
 						Toast.makeText(EmojiTranslateActivity.this, R.string.saved, Toast.LENGTH_SHORT).show();
 						Utilities.setPreferredDict(EmojiTranslateActivity.this, path);
 						LoadedDict.getInstance().setDictionary(path, Utilities.loadDictionaryFromExternalStorage(Utilities.getPreferredDict(EmojiTranslateActivity.this)));
@@ -423,7 +474,7 @@ public class EmojiTranslateActivity extends AppCompatActivity implements Fragmen
 			editTextDialog.show();
 		} else {
 			String path = LoadedDict.getInstance().getFilename();
-			if (LoadedDict.getInstance().saveToDisk(path)) {
+			if (LoadedDict.getInstance().saveToDisk(LoadedDict.getInstance().getDictionary(), path)) {
 				Toast.makeText(EmojiTranslateActivity.this, R.string.updated_dictionary, Toast.LENGTH_SHORT).show();
 				Utilities.setPreferredDict(EmojiTranslateActivity.this, path);
 			} else {

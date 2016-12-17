@@ -225,22 +225,22 @@ public class LoadedDict {
         return longestPhrase;
     }
 
-	public String reserialize(){
-		return new Gson().toJson(mDict, EmojiDictionary.class);
+	public static String reserialize(EmojiDictionary dict){
+		return new Gson().toJson(dict, EmojiDictionary.class);
 	}
 
 	public String getFilename() {
 		return mFilename;
 	}
 
-	public boolean saveToDisk(String filename) {
+	public boolean saveToDisk(EmojiDictionary dictionary, String filename) {
 		File saveFile = new File(filename);
-		new File(saveFile.getPath().substring(0, saveFile.getPath().lastIndexOf("/"))).mkdirs();
+		new File(saveFile.getPath().substring(0, saveFile.getPath().lastIndexOf("/"))).mkdirs(); //TODO: Survey says Bellovin would probably disapprove
 
 		FileOutputStream outputStream;
 		try {
 			outputStream = new FileOutputStream(saveFile);
-			outputStream.write(reserialize().getBytes());
+			outputStream.write(reserialize(dictionary).getBytes());
 			outputStream.close();
 		} catch (Exception e) {
 			return false;

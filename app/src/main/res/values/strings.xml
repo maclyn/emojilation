@@ -73,7 +73,15 @@
     <string name="look_at_cool_dict">Check out %s\'s emoji dictionary!</string>
     <string name="download_to_view">Copy the attached file to the `%s` directory on your device to load it into TranslateToEmoji, or download it from the Play Store at TODO_ADD_URL.</string>
     <string name="no_sharing_activities">No apps for sharing found on your phone : (</string>
-    <string name="dictionary_name">Dictionary Name</string>
-    <string name="dictionary_author">Dictionary Author</string>
+    <string name="dictionary_name">Dictionary Title</string>
+    <string name="dictionary_author">Author</string>
+    <string name="dictionary_language">Source Langauge</string>
     <string name="emojify">Emoji</string>
+    <string name="base_off_current">Base off current dictionary</string>
+    <string name="create_dictionary">Create Dictionary</string>
+    <string name="create">Create</string>
+    <string name="provide_all_info">Please provide all info.</string>
+    <string name="dictionary_filename">Filename (e.g. \"nifty_phrases\", \"cool_beans\")</string>
+    <string name="new_dictionary_created">New dictionary created and opened.</string>
+    <string name="failed_to_create">Failed to create new dictionary. Maybe the filename was in use?</string>
 </resources>
